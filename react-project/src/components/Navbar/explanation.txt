@@ -1,3 +1,5 @@
 for navbar component I want to have four items and four subItems these four subItems are same in each Item. subItems will be shown by hovering on each item or clicking that.
 first I define items and subItems in NavbarData.js.
- 
+
+each item that has subItems has a p tag and arrow icon by clicking on that item the status of the arrow changes also there is another status that shows the condition of subitems to be shown or be hidden .
+

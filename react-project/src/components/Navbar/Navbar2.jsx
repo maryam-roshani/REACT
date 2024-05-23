@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { RiArrowDropDownLine } from 'react-icons/ri'
-import data from './AccordionData.js'
+import data from './NavbarData.js'
+import './navbar.css'
 
 
 //  accordionitem component
@@ -35,7 +36,7 @@ const Navbar = () => {
     return (
      <div className='container'>
        {data.map((item, index) => (
-       <AccordionItem
+       <NavbarItem
         key={index}
         question={item.question}
         answer={item.answer}
@@ -47,4 +48,4 @@ const Navbar = () => {
     )
    };
    
-   export default Accordion;
+   export default Navbar;
