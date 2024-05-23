@@ -16,4 +16,7 @@ const data = [{
     }
 ];
 
-export default data;
+const data2 = ['subItem-1', 'subItem-2', 'subItem-3', 'subItem-4']
+export const data3 = ['Item 1', 'Item 2', 'Item 3', 'Item 4']
+
+export default data2;
