@@ -1,0 +1,3 @@
+for navbar component I want to have four items and four subItems these four subItems are same in each Item. subItems will be shown by hovering on each item or clicking that.
+first I define items and subItems in NavbarData.js.
+ 
