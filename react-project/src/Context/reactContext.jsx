@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 
 export const ReactContext = createContext(null);
 
-const ShopContextProvider = (props) => {
+const ReactContextProvider = (props) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
