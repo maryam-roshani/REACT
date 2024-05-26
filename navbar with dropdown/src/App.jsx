@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
-import Dropdown from './components/Dropdown2'
+import Dropdown from './components/Dropdown/Dropdown3'
 
 
 

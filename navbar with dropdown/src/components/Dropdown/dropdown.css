@@ -1,0 +1,12 @@
+.items-list::before {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: -13px;
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+    background-color: white;
+    border-color: rgb(215, 213, 213);
+    border-width: 2px 0 0 2px;
+}
