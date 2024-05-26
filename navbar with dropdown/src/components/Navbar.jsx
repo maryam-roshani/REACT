@@ -42,16 +42,6 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <ul className=' bg-white rounded-sm subItems'>
-        {subItems.map(item => (
-          <li
-            key={item.id}
-            className='p-4 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
-          >
-            {item.text}
-          </li>
-        ))}
-      </ul>
 
       {/* Mobile Navigation Icon */}
       <div onClick={handleNav} className='block md:hidden'>
