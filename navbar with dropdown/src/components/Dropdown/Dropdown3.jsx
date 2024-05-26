@@ -12,9 +12,9 @@ const Dropdown = () => {
     };
   return (
     <div>
-        <img src={girl} onClick={handleMenu}  alt="" className='w-24 h-24 rounded-full object-cover relative' />
+        <img src={girl} onClick={handleMenu}  alt="" className='w-16 h-16 rounded-full object-cover relative' />
         {menu ? 
-        <ul className='absolute items-list border-2 left-2 rounded-md top-28 pt-3'>
+        <ul className='absolute items-list border-2 rounded-md top-20 pt-3'>
             {data.map(item => (
             <li
                 key={item.id}
