@@ -1,11 +1,19 @@
 import React from 'react'
 import data from './dropDownData.js'
 import girl from '../../assets/girl.jpg'
+import { useState } from 'react'
 import './dropdown.css'
 const Dropdown = () => {
+    const [menu, setMenu] = useState(false);
+
+    // Toggle function to handle the navbar's display
+    const handleMenu = () => {
+      setMenu(!menu);
+    };
   return (
     <div>
-        <img src={girl}  alt="" className='w-24 h-24 rounded-full object-cover relative' />
+        <img src={girl} onClick={handleMenu}  alt="" className='w-24 h-24 rounded-full object-cover relative' />
+        {menu ? 
         <ul className='absolute items-list border-2 left-2 rounded-md top-28 pt-3'>
             {data.map(item => (
             <li
@@ -15,7 +23,7 @@ const Dropdown = () => {
                 {item.text}
             </li>
             ))}
-        </ul>
+        </ul>:<></>}
     </div>
   )
 }
