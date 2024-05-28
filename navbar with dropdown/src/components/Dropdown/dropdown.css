@@ -1,4 +1,4 @@
-.items-list::before {
+/* .items-list::before {
     content: '';
     position: absolute;
     left: 35px;
@@ -9,4 +9,4 @@
     background-color: white;
     border-color: rgb(215, 213, 213);
     border-width: 2px 0 0 2px;
-}
+} */
