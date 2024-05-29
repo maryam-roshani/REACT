@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import data ,{data2} from './accordionData';
 import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
-import { data2 } from './accordionData'
 
 
 const Accordion = () => {
@@ -15,11 +14,12 @@ const Accordion = () => {
         <div className="w-full p-2 rounded-md bg-slate-100" >
             {data2.map(item => (
                 <div className='flex justify-between align-items-center' onClick={handleMenu}>
-                    <p>Items</p>
+                    <p>{item.text}</p>
                     {
                         menu ? <FaCaretUp className='my-auto' /> : <FaCaretDown className='my-auto' />
                     }
                 </div>
+            ))}
                 {menu ? 
                     <ul className='rounded-md pt-3'>
                         {data.map(item => (
@@ -29,10 +29,9 @@ const Accordion = () => {
                         >
                             {item.text}
                         </li>
-                        ))}
+                    ))}
                     </ul>:<></>
                 }
-            ))}
         </div>
         
     </div>
