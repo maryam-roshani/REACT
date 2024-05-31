@@ -2,8 +2,11 @@ import React from 'react'
 
 
 const IntegratedAccount = () => {
+    const [connected, setConnected] = useState(false);
     return (
-        <div>IntegratedAccounts</div>
+        <div>
+
+        </div>
     )
 }
 
