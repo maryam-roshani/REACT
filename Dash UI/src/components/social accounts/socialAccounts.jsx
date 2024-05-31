@@ -5,10 +5,10 @@ const SocialAccounts = () => {
   return (
     <div>
         <div className="bg-slate-50 rounded-md shadow-sm pt-5 px-4 pb-3">
-            <h3 className="text-xl font-semibold">Social accounts</h3>
+            <h3 className="text-xl font- text-red-950">Social accounts</h3>
             <p className="text-sm text-slate-800">Let everyone know where they can find you.</p>
             <hr />
-            <ul>
+            <ul className='list-none'>
                 {data.map(item => 
                     <li key={item.id} className='flex justify-between'>
                         <h3 className="text-lg">{item.socialNetwork}</h3>
