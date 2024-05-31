@@ -1,11 +1,22 @@
 import React from 'react'
+import { DiBackbone } from 'react-icons/di';
 
 
-const IntegratedAccount = () => {
+const IntegratedAccount = ([{logo}, {name}]) => {
     const [connected, setConnected] = useState(false);
     return (
-        <div>
-
+        <div className='flex'> 
+            <img src={logo} alt="" />
+            <div>
+                <h3>{name}</h3>
+                <p className="text-slate-600 font-sm">Login with {name}</p>
+            </div>
+            {connected? 
+                <div>
+                    <p className="text-sm">dashdrops@{name}.com</p>
+                    <p className="text-blue-700">Signout</p>
+                </div> :
+                <button className='bg-purple-900 py-2 px-3'>Connect</button>}
         </div>
     )
 }
@@ -19,9 +30,9 @@ const IntegratedAccounts = () => {
             <hr />
             <ul className='list-none'>
                 {data.map(item => 
-                    <li key={item.id} className='flex justify-between p-3'>
-                        <h3 className="text-base text-slate-700 my-auto">{item.socialNetwork}</h3>
-                        <input type="text" className="py-2 px-3 border-2 border-slate-200 rounded-md w-3/4 text-sm" placeholder={item.placeHolder}/>
+                    <li key={item.id} className=''>
+                        <hr />
+                        <IntegratedAccount logo={item.logo} name={item.name} />
                     </li>
                 )}
             </ul>
