@@ -1,8 +1,10 @@
 import React from 'react'
 import { DiBackbone } from 'react-icons/di';
+import data from './accountsData'
+import { useState } from 'react';
 
 
-const IntegratedAccount = ([{logo}, {name}]) => {
+const IntegratedAccount = ({logo}, {name}) => {
     const [connected, setConnected] = useState(false);
     return (
         <div className='flex'> 
