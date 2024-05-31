@@ -1,12 +1,18 @@
 import React from 'react'
-import data from './socialData.js'
 
-const SocialAccounts = () => {
+
+const IntegratedAccount = () => {
+    return (
+        <div>IntegratedAccounts</div>
+    )
+}
+
+const IntegratedAccounts = () => {
   return (
     <div className='p-5 bg-slate-50'>
-        <div className=" relative bg-white rounded-md shadow-sm pt-5 px-4 pb-12 font-semibold">
-            <h3 className="text-xl font-bold text-black">Social Accounts</h3>
-            <p className="text-xs mb-3  text-slate-500">Let everyone know where they can find you.</p>
+        <div className=" bg-white rounded-md shadow-sm pt-5 px-4 pb-12 font-semibold">
+            <h3 className="text-xl font-bold text-black">Integrated Accounts</h3>
+            <p className="text-xs mb-3  text-slate-500">Select your prefrences for the notification that are the most common for all users.</p>
             <hr />
             <ul className='list-none'>
                 {data.map(item => 
@@ -22,4 +28,4 @@ const SocialAccounts = () => {
   )
 }
 
-export default SocialAccounts
+export default IntegratedAccounts
