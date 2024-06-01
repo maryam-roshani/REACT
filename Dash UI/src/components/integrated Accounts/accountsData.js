@@ -2,7 +2,7 @@ import facebook from '../../assets/facebook.png'
 import google from '../../assets/google.png'
 import github from '../../assets/github.png'
 import slack from '../../assets/Slack.png'
-import twitter from '../../assets/twit.png'
+import twitter from '../../assets/twitter.png'
 import linkedin from '../../assets/linkedin.png'
 
 

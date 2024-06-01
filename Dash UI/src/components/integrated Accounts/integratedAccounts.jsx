@@ -7,17 +7,19 @@ const IntegratedAccount = (props) => {
     const [connected, setConnected] = useState(false);
     return (
         <div className='flex m-3 align-items-center justify-between'> 
-            <img src={props.logo} alt="" className='w-6 h-6 my-auto'/>
-            <div cl>
-                <h3 className='text-black text-xl font-serif'>{props.name}</h3>
-                <p className="text-slate-600 font-sm">Login with {props.name}</p>
+            <div className='flex gap-3'>
+                <img src={props.logo} alt="" className='w-6 h-6 my-auto'/>
+                <div cl>
+                    <h3 className='text-black text-xl font-serif'>{props.name}</h3>
+                    <p className="text-slate-600 font-sm">Login with {props.name}</p>
+                </div>
             </div>
             {connected? 
                 <div>
                     <p className="text-sm">dashdrops@{name}.com</p>
                     <p className="text-blue-700">Signout</p>
                 </div> :
-                <button className='bg-purple-900 py-2 px-3'>Connect</button>}
+                <button className='bg-blue-700 py-2 w-24 text-center rounded-md  text-slate-50  text-sm h-10'>Connect</button>}
         </div>
     )
 }
@@ -37,7 +39,6 @@ const IntegratedAccounts = () => {
                     </li>
                 )}
             </ul>
-            <button className='text-white rounded-md bg-blue-600 text-sm py-2 px-4 mt-3 absolute bottom-3 right-12'>Save Social</button>
         </div>
     </div>
   )
