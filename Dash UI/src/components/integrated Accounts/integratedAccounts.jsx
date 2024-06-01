@@ -1,17 +1,16 @@
 import React from 'react'
-import { DiBackbone } from 'react-icons/di';
 import data from './accountsData'
 import { useState } from 'react';
 
 
-const IntegratedAccount = ({logo}, {name}) => {
+const IntegratedAccount = (props) => {
     const [connected, setConnected] = useState(false);
     return (
-        <div className='flex'> 
-            <img src={logo} alt="" />
-            <div>
-                <h3>{name}</h3>
-                <p className="text-slate-600 font-sm">Login with {name}</p>
+        <div className='flex m-3 align-items-center justify-between'> 
+            <img src={props.logo} alt="" className='w-6 h-6 my-auto'/>
+            <div cl>
+                <h3 className='text-black text-xl font-serif'>{props.name}</h3>
+                <p className="text-slate-600 font-sm">Login with {props.name}</p>
             </div>
             {connected? 
                 <div>
