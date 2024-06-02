@@ -4,16 +4,21 @@ import data ,{data2} from './accordionData';
 import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 
 
-const AccordionItem = ({text}) => {
+const AccordionItem = (props) => {
     const [menu, setMenu] = useState(false);
     const handleMenu = () => {
-        setMenu(!menu);
+        if (munu) {
+            setMenu(false)
+        }
+        else {
+            setMenu(true)
+        }
     };
 
     return (
         <>
             <div className='flex justify-between align-items-center' onClick={handleMenu}>
-            <p>{text}</p>
+            <p>{props.text}</p>
             {
                 menu ? <FaCaretUp className='my-auto' /> : <FaCaretDown className='my-auto' />
             }
@@ -36,11 +41,12 @@ const AccordionItem = ({text}) => {
 
 
 const Accordion = () => {
+    [isOpen, setIsOpen] = useState("")
   return (
     <div className='p-3 w-64'>
         <div className="w-full p-2 rounded-md bg-slate-100" >
             {data2.map(item => (
-                <AccordionItem text = {item.text} />
+                <AccordionItem text = {item.text} active={isOpen} setActive={setIsOpen}/>
             ))}
         </div>
         

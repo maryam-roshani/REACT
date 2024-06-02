@@ -5,9 +5,12 @@ import { useState } from 'react';
 
 const IntegratedAccount = (props) => {
     const [connected, setConnected] = useState(false);
+    function handleConnect(){
+        setConnected(!connected)
+    }
     return (
         <div className='flex m-3 align-items-center justify-between'> 
-            <div className='flex gap-3'>
+            <div className='flex gap-4'>
                 <img src={props.logo} alt="" className='w-6 h-6 my-auto'/>
                 <div cl>
                     <h3 className='text-black text-xl font-serif'>{props.name}</h3>
@@ -16,10 +19,10 @@ const IntegratedAccount = (props) => {
             </div>
             {connected? 
                 <div>
-                    <p className="text-sm">dashdrops@{name}.com</p>
-                    <p className="text-blue-700">Signout</p>
+                    <p className="text-sm">dashdrops@<span className='lowercase'>{props.name}</span>.com</p>
+                    <p className="text-blue-700 cursor-pointer" onClick={handleConnect}>Signout</p>
                 </div> :
-                <button className='bg-blue-700 py-2 w-24 text-center rounded-md  text-slate-50  text-sm h-10'>Connect</button>}
+                <button className='bg-blue-700 py-2 w-24 text-center rounded-md text-slate-50 text-sm h-10 my-auto' onClick={handleConnect}>Connect</button>}
         </div>
     )
 }
