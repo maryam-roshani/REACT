@@ -2,26 +2,21 @@ import React from 'react';
 import { useState } from 'react';
 import data ,{data2} from './accordionData';
 import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
+import './accordion.css'
 
 
 const AccordionItem = (props) => {
     const [menu, setMenu] = useState(false);
+    const contentHeight = useRef()
     const handleMenu = () => {
-        if (munu) {
-            setMenu(false)
-        }
-        else {
-            setMenu(true)
-        }
+        setMenu(!menu);
     };
 
     return (
         <>
             <div className='flex justify-between align-items-center' onClick={handleMenu}>
-            <p>{props.text}</p>
-            {
-                menu ? <FaCaretUp className='my-auto' /> : <FaCaretDown className='my-auto' />
-            }
+                <p>{props.text}</p>
+                <FaCaretUp className={`my-auto arrow ${menu ? 'active' : ''}`} />
             </div>
             {menu ? 
                 <ul className='rounded-md pt-3'>
@@ -35,13 +30,21 @@ const AccordionItem = (props) => {
                 ))}
                 </ul>:<></>
             }
+            <div ref={contentHeight} className="answer-container" style={
+                isOpen
+                ? { height: contentHeight.current.scrollHeight }
+                : { height: "0px" }
+               }>
+            <p className="answer-content">{answer}</p>
+           </div>
+
         </>
     )
 }
 
 
 const Accordion = () => {
-    [isOpen, setIsOpen] = useState("")
+   const [isOpen, setIsOpen] = useState("")
   return (
     <div className='p-3 w-64'>
         <div className="w-full p-2 rounded-md bg-slate-100" >
