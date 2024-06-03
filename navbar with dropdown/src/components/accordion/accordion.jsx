@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import data ,{data2} from './accordionData';
 import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 import './accordion.css'
@@ -14,28 +14,28 @@ const AccordionItem = (props) => {
     };
 
     return (
-        <>
+        <div className='wrapper overflow-hidden'>
             <div className='flex justify-between align-items-center' onClick={handleMenu}>
                 <p>{props.text}</p>
                 <FaCaretUp className={`my-auto arrow ${menu ? 'active' : ''}`} />
-                <div ref={contentHeight} className="list-container" style={
-                    menu
-                    ? { height: contentHeight.current.scrollHeight }
-                    : { height: "0px" }
-                    }>
-                    <ul className='rounded-md pt-3'>
-                        {data.map(item => (
-                        <li
-                            key={item.id}
-                            className='p-1 hover:bg-slate-200 rounded-lg m-1 cursor-pointer duration-300 hover:text-black navItem text-sm text-slate-700'
-                        >
-                            {item.text}
-                        </li>
-                        ))}
-                    </ul>
-                </div>
             </div>
-        </>
+            <div ref={contentHeight} className="list-container" style={
+                menu
+                ? { height: contentHeight.current.scrollHeight }
+                : { height: "0px" }
+                }>
+                <ul className='rounded-md pt-3'>
+                    {data.map(item => (
+                    <li
+                        key={item.id}
+                        className='p-1 hover:bg-slate-200 rounded-lg m-1 cursor-pointer duration-300 hover:text-black navItem text-sm text-slate-700'
+                    >
+                        {item.text}
+                    </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
     )
 }
 
