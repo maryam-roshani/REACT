@@ -5,18 +5,13 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 import './accordion.css'
 
 
-const AccordionItem = (props) => {
-    const [menu, setMenu] = useState(false);
+const AccordionItem = ({menu, onClick, text}) => {
     const contentHeight = useRef()
-
-    const handleMenu = () => {
-        setMenu(!menu);
-    };
 
     return (
         <div className='wrapper overflow-hidden'>
-            <div className='flex justify-between align-items-center' onClick={handleMenu}>
-                <p>{props.text}</p>
+            <div className='flex justify-between align-items-center' onClick={onClick}>
+                <p>{text}</p>
                 <FaCaretUp className={`my-auto arrow ${menu ? 'active' : ''}`} />
             </div>
             <div ref={contentHeight} className="list-container" style={
@@ -41,12 +36,16 @@ const AccordionItem = (props) => {
 
 
 const Accordion = () => {
-   const [isOpen, setIsOpen] = useState("")
+    const [activeIndex, setActiveIndex] = useState(null);
+    const handleItemClick = (index) => {
+        setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+       };
+
   return (
     <div className='p-3 w-64'>
         <div className="w-full p-2 rounded-md bg-slate-100" >
             {data2.map(item => (
-                <AccordionItem text = {item.text} active={isOpen} setActive={setIsOpen}/>
+                <AccordionItem key={item.id} text={item.text} menu={activeIndex === item.id} onClick={() => handleItemClick(item.id)} />
             ))}
         </div>
         
