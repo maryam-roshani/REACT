@@ -5,6 +5,6 @@ const data = [
     { id: 4, label: "City", placeHolder: "Tehran", type: "text", full: "true" },
     { id: 5, label: "State", placeHolder: "Tehran", type: "text", full: "false" },
     { id: 6, label: "Zip/Postal Code", placeHolder: "0000", type: "number", full: "false" },
-
-
 ]
+
+export default data
