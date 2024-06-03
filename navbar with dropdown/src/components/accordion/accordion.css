@@ -6,3 +6,8 @@
     rotate: 180deg;
     color: #1db954;
 }
+
+.list-container {
+    padding: 0 1rem;
+    transition: height .7s ease-in-out;
+}

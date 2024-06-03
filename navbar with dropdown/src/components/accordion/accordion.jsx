@@ -8,6 +8,7 @@ import './accordion.css'
 const AccordionItem = (props) => {
     const [menu, setMenu] = useState(false);
     const contentHeight = useRef()
+
     const handleMenu = () => {
         setMenu(!menu);
     };
@@ -17,27 +18,23 @@ const AccordionItem = (props) => {
             <div className='flex justify-between align-items-center' onClick={handleMenu}>
                 <p>{props.text}</p>
                 <FaCaretUp className={`my-auto arrow ${menu ? 'active' : ''}`} />
+                <div ref={contentHeight} className="list-container" style={
+                    menu
+                    ? { height: contentHeight.current.scrollHeight }
+                    : { height: "0px" }
+                    }>
+                    <ul className='rounded-md pt-3'>
+                        {data.map(item => (
+                        <li
+                            key={item.id}
+                            className='p-1 hover:bg-slate-200 rounded-lg m-1 cursor-pointer duration-300 hover:text-black navItem text-sm text-slate-700'
+                        >
+                            {item.text}
+                        </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
-            {menu ? 
-                <ul className='rounded-md pt-3'>
-                    {data.map(item => (
-                    <li
-                        key={item.id}
-                        className='p-1 hover:bg-slate-200 rounded-lg m-1 cursor-pointer duration-300 hover:text-black navItem text-sm text-slate-700'
-                    >
-                        {item.text}
-                    </li>
-                ))}
-                </ul>:<></>
-            }
-            <div ref={contentHeight} className="answer-container" style={
-                isOpen
-                ? { height: contentHeight.current.scrollHeight }
-                : { height: "0px" }
-               }>
-            <p className="answer-content">{answer}</p>
-           </div>
-
         </>
     )
 }
