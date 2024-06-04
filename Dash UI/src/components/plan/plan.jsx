@@ -1,5 +1,6 @@
 import React from 'react'
 import data from './planData'
+import { useState } from 'react';
 
 const Plan = (props) => {
     const [connected, setConnected] = useState(false);
@@ -10,17 +11,14 @@ const Plan = (props) => {
         <div className='flex m-3 align-items-center justify-between'> 
             <div className='flex gap-4'>
                 <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full " />
-                <div cl>
+                <div>
                     <h3 className='text-black text-xl font-serif'>{props.name}</h3>
-                    <p className="text-slate-600 font-sm">Login with {props.name}</p>
+                    <p className="text-slate-600 font-sm">{props.site}</p>
                 </div>
             </div>
-            {connected? 
-                <div>
-                    <p className="text-sm">dashdrops@<span className='lowercase'>{props.name}</span>.com</p>
-                    <p className="text-blue-700 cursor-pointer" onClick={handleConnect}>Signout</p>
-                </div> :
-                <button className='bg-blue-700 py-2 w-24 text-center rounded-md text-slate-50 text-sm h-10 my-auto' onClick={handleConnect}>Connect</button>}
+            <div>
+                <h3 className="text-base font-semibold">${props.price}</h3>
+            </div>
         </div>
     )
 }
@@ -37,7 +35,7 @@ const Plans = () => {
             <ul className='list-none'>
                 {data.map(item => 
                     <li key={item.id} className=''>
-                        <IntegratedAccount logo={item.logo} name={item.name} />
+                        <IntegratedAccount price={item.price} name={item.name} site={item.site} />
                     </li>
                 )}
             </ul>
@@ -46,4 +44,4 @@ const Plans = () => {
   )
 }
 
-export default Plan
+export default Plans
