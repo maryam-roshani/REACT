@@ -16,9 +16,9 @@ const BillingAddress = () => {
                         </li>
                     )}
                 </ul>
-                <div class="flex items-center mb-4 py-3 px-2">
-                    <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
-                    <label for="default-checkbox" class="ms-2 text-sm font-medium text-slate-500">Make this my default payment method.</label>
+                <div className="flex items-center mb-4 py-3 px-2">
+                    <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " />
+                    <label htmlFor="default-checkbox" className="ms-2 text-sm font-medium text-slate-500">Make this my default payment method.</label>
                 </div>
                 <div className="p-2">
                 <button className='text-white rounded-md bg-blue-800 py-2 px-4 mt-3 w-full'>Save Social</button>

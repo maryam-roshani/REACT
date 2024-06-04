@@ -12,7 +12,7 @@ const IntegratedAccount = (props) => {
         <div className='flex m-3 align-items-center justify-between'> 
             <div className='flex gap-4'>
                 <img src={props.logo} alt="" className='w-6 h-6 my-auto'/>
-                <div cl>
+                <div>
                     <h3 className='text-black text-xl font-serif'>{props.name}</h3>
                     <p className="text-slate-600 font-sm">Login with {props.name}</p>
                 </div>
