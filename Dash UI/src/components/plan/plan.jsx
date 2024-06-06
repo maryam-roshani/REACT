@@ -35,7 +35,7 @@ const Plans = () => {
             <ul className='list-none'>
                 {data.map(item => 
                     <li key={item.id} className=''>
-                        <IntegratedAccount price={item.price} name={item.name} site={item.site} />
+                        <Plan price={item.price} name={item.name} site={item.site} />
                     </li>
                 )}
             </ul>

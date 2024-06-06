@@ -6,3 +6,5 @@ const data = [
     { id: 5, question: 'what is Multisite 0lan?', answer: 'Nullam nec pharetra felis. Praesent et quam fringilla, porta nunc ut, dignissim nisl. Sed finibus' },
     { id: 6, question: 'Are the files downloadable?', answer: 'Duis ac nisi ut diam congue pellentesque vitae sed turpis. Nullam nec pharetra felis. Praesent et quam fringilla, porta nunc ut, dignissim nisl. Sed finibus' }
 ]
+
+export default data
