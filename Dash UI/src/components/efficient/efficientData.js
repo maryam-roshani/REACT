@@ -6,3 +6,5 @@ const data = [
     { id: 5, name: 'pre-rendered results', text: 'Lore,m ipsum dolor sit amet, consectetur adipiscing elit. Donec vel aliquam augue. Nulla rutrum lorem id lacus malesuada pretium. Aenean.' },
     { id: 6, name: 'simple analytics', text: 'Lore,m ipsum dolor sit amet, consectetur adipiscing elit. Donec vel aliquam augue. Nulla rutrum lorem id lacus malesuada pretium. Aenean.' }
 ]
+
+export default data
