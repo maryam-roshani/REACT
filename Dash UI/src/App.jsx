@@ -6,6 +6,7 @@ import IntegratedAccounts from './components/integrated Accounts/integratedAccou
 import BillingAddress from './components/billing Address/billingAddress';
 import Plan from './components/plan/plan';
 import Questions from './components/asked questions/Question';
+import Efficient from './components/efficient/Efficient';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <SocialAccounts />
       <DangerZone />
       <Questions />
+      <Efficient />
     </>
   )
 }
