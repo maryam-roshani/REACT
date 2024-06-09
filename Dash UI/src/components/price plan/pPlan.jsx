@@ -21,6 +21,9 @@ const PricePlan = () => {
                   <li key={item.id} className='block py-4 px-3 mb-4 bg-white rounded-md'>
                       <h3 className="text-base text-black my-auto font-medium mb-1 capitalize">{item.name}</h3>
                       <p>{item.text}</p>
+                      <div className="flex mt-6 mb-4">
+                      <h1 className=" text-black">${item.price}</h1><p>/mo</p>
+                      </div>
                   </li>
               )}
               </ul>
