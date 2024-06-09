@@ -11,7 +11,7 @@ const PricePlan = () => {
                 <h1 className='capitalize text-3xl font-semibold mt-3 mb-3 text-black'>Find a plan that's right for you</h1>
                 <div className="flex gap-2">
                     <p className='mb-9 text-wrap lh-lg'>Or simply leverage the expertise of our consultation team.</p>
-                    <button className='bg-white border-1 border-blue-700 text-blue-700 rounded-md p-1'>Talk to us</button>
+                    <button className='bg-transparent border-1 border-blue-700 text-blue-700 rounded-md p-1'>Talk to us</button>
                 </div>
                 <button className="rounded-full p-2 bg-white ouline-0 border-0 my-10"><span className='p-1 rounded-full text-white bg-blue-700'>Annual</span>Monthly</button>
             </div>
@@ -22,8 +22,18 @@ const PricePlan = () => {
                       <h3 className="text-base text-black my-auto font-medium mb-1 capitalize">{item.name}</h3>
                       <p>{item.text}</p>
                       <div className="flex mt-6 mb-4">
-                      <h1 className=" text-black">${item.price}</h1><p>/mo</p>
+                         <h1 className=" text-black">${item.price}</h1><p>/mo</p>
                       </div>
+                      <button className='bg-transparent border-1 border-blue-700 text-blue-700 rounded-md p-2 capitalize'>Buy {item.name}</button>
+                      <hr className="my-6" />
+                      <p className="text-sm text-black mb-6">{item.features_text}</p>
+                      <ul>
+                        {item.features.map(item =>
+                            <li key={item.id}>
+                                <p>{item}</p>
+                            </li>
+                        )}
+                      </ul>
                   </li>
               )}
               </ul>
