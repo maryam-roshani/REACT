@@ -18,8 +18,7 @@ const PricePlan = () => {
           <div className="">
               <ul className='list-none grid grid-cols-3 gap-4'>
               {data.map(item => 
-                  <li key={item.id} className='block p-2 mb-4'>
-                        <img src={item.logo} className='bg-indigo-600 text-white w-10 h-10 my-5 p-2 rounded-md' alt="" />
+                  <li key={item.id} className='block py-4 px-3 mb-4 bg-white rounded-md'>
                       <h3 className="text-base text-black my-auto font-medium mb-1 capitalize">{item.name}</h3>
                       <p>{item.text}</p>
                   </li>
