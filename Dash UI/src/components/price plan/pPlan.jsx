@@ -29,7 +29,7 @@ const PricePlan = () => {
                       <p className="text-sm text-black mb-6">{item.features_text}</p>
                       <ul>
                         {item.features.map(item =>
-                            <li key={item.id}>
+                            <li key={item.index}>
                                 <p>{item}</p>
                             </li>
                         )}

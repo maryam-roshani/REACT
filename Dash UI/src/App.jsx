@@ -7,6 +7,7 @@ import BillingAddress from './components/billing Address/billingAddress';
 import Plan from './components/plan/plan';
 import Questions from './components/asked questions/Question';
 import Efficient from './components/efficient/Efficient';
+import PricePlan from './components/price plan/pPlan';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <IntegratedAccounts />
       <SocialAccounts />
       <DangerZone />
+      <PricePlan />
       <Questions />
       <Efficient />
     </>
