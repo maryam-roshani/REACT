@@ -3,14 +3,15 @@ import data from './tasksData'
 
 const Home = () => {
   return (
-    <div className="flex justify-content-center align-items-center bg-slate-100">
-        <div className="rounded-md p-2 bg-white">
+    <div className="h-screen flex justify-content-center align-items-center bg-slate-100">
+        <div className="rounded-md p-3 bg-white m-auto">
           <ul className='list-none'>
             {data.map(item => 
-                <li key={item.id} className='flex gap-2 rounded-md p-2'>
-                    <h4 className="text-base font-medium">{item.id}</h4>
-                    <h4 className="text-base font-medium">{item.priority}</h4>
-                    <h4 className="text-base font-medium">{item.status}</h4>
+                <li key={item.id} className='grid grid-cols-7 gap-4 rounded-md p-3'>
+                    <h4 className="text-base font-medium col-span-1">{item.id}</h4>
+                    <h4 className="text-base font-medium col-span-2">{item.title}</h4>
+                    <h4 className="text-base font-medium col-span-2">{item.priority}</h4>
+                    <h4 className="text-base font-medium col-span-2">{item.status}</h4>
                 </li>
             )}
           </ul>
