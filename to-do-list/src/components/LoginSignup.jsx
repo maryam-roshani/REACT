@@ -6,12 +6,12 @@ const LoginSignup = () => {
     const [action,setAction] = useState("Sign Up");
   
     return (
-        <div className="py-3">
-          <div className="flex justify-content-center">
-            <div className="gap-2 mt-3 rounded-md py-4 px-3">
-            <h1 className='mb-3 mx-1 h4'>{action}</h1>
-              <form className='grid gap-2'>
-                <div className="grid gap-3">
+        <div className="p-6 bg-blue-400">
+          <div className="flex justify-content-center bg-white rounded-lg w-2/3 m-auto">
+            <div className="gap-2 mt-3 rounded-md p-5">
+            <h1 className='mb-3 mx-1 text-xl font-semibold '>{action}</h1>
+              <form className='grid gap-3'>
+                <div className="grid gap-5">
                   {action==="Login"?<div></div>:<input type="text" className="py-2 shadow-sm rounded-none" id="exampleInputName" aria-describedby="nameHelp" placeholder="Your Name"/>}
                   <input type="email" className="py-2 shadow-sm rounded-none" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
                   <input type="password" className="py-2 shadow-sm rounded-none" id="exampleInputPassword1" placeholder="Password"/>
