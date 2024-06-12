@@ -7,18 +7,18 @@ const LoginSignup = () => {
   
     return (
         <div className="p-6 bg-blue-400">
-          <div className="flex justify-content-center bg-white rounded-lg w-2/3 m-auto">
+          <div className="flex justify-content-center bg-white rounded-lg w-1/3 m-auto">
             <div className="gap-2 mt-3 rounded-md p-5">
             <h1 className='mb-3 mx-1 text-xl font-semibold '>{action}</h1>
               <form className='grid gap-3'>
-                <div className="grid gap-5">
-                  {action==="Login"?<div></div>:<input type="text" className="py-2 shadow-sm rounded-none" id="exampleInputName" aria-describedby="nameHelp" placeholder="Your Name"/>}
-                  <input type="email" className="py-2 shadow-sm rounded-none" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-                  <input type="password" className="py-2 shadow-sm rounded-none" id="exampleInputPassword1" placeholder="Password"/>
+                <div className="grid gap-7">
+                  {action==="Login"?<div></div>:<input type="text" className="p-3 shadow-md rounded-md outline-0" id="exampleInputName" aria-describedby="nameHelp" placeholder="Your Name"/>}
+                  <input type="email" className="p-3 shadow-md rounded-md outline-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                  <input type="password" className="p-3 shadow-md rounded-md outline-0" id="exampleInputPassword1" placeholder="Password"/>
                   {action==="Sign Up"?<div></div>:<div className="">Lost Password? <span className='font-semibold text-xs'>Click Here!</span></div>}
                 </div>
-                <button className=' mx-2 border-none py-2 my-2'>Continue</button>
-                {action==="Login"?<div></div>:<p className="">Already have an account? <span className='font-bold' onClick={()=>{setAction("Login")}}>Login </span>Here</p>}
+                <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white'>Continue</button>
+                {action==="Login"?<div></div>:<p className="">Already have an account? <span className='font-bold text-red-600 text-lg' onClick={()=>{setAction("Login")}}>Login </span>Here</p>}
                 {action==="Sign Up"?<div></div>:<div className="">No account? <span className='font-bold' onClick={()=>{setAction("Sign Up")}}>Click Here! </span></div>}
                 {action==="Login"?<div></div>:<div className="">
                   <div className="">
