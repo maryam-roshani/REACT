@@ -1,11 +1,13 @@
 import React from 'react'
 import data from '../../assets/tasksData'
+import {Link} from 'react-router-dom';
+
 
 const TaskItem = (props) => {
   return (
     <>
       <h4 className="text-base font-medium col-span-1">{props.id}</h4>
-      <h4 className="text-base font-medium col-span-2">{props.title}</h4>
+      <Link to={`/task/${props.id}`}><h4 className="text-base font-medium col-span-2">{props.title}</h4></Link>
       <h4 className="text-base font-medium col-span-2">{props.priority}</h4>
       <h4 className="text-base font-medium col-span-2">{props.status}</h4>
     </>
