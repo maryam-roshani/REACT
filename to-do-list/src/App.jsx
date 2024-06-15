@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Task from './pages/Task'
 
 
-
 function App() {
 
   return (
@@ -15,7 +14,7 @@ function App() {
       <div className='h-full'>
         < Home />
         <LoginSignup />
-        <Detail />
+        {/* <Detail /> */}
       </div>
       <Routes>
         <Route path='/task' element={<Task/>}>
