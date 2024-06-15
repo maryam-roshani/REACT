@@ -1,5 +1,5 @@
 import React from 'react'
-import data from './tasksData'
+import data from '../../assets/tasksData'
 
 const TaskItem = (props) => {
   return (
