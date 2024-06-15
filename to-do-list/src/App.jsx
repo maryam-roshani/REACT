@@ -2,8 +2,8 @@ import './App.css'
 import Home from './components/home/home'
 import LoginSignup from './components/loginSignup/LoginSignup'
 import Detail from './components/TaskDisplay'
-import { BrowserRouter } from 'react-router-dom'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Task from './pages/Task'
 
 
 

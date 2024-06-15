@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { TaskContext } from '../context/TaskContext';
 
 const TaskDisplay = (props) => {
