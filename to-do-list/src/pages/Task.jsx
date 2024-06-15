@@ -1,19 +1,18 @@
 import React, { useContext } from 'react'
-import { ShopContext } from '../Context/ShopContext'
+import { TaskContext } from '../context/TaskContext.jsx'
 import {useParams} from 'react-router-dom';
 import Breadcrum from '../Components/breadcrum.jsx';
-import "bootstrap/dist/css/bootstrap.min.css";
-import ProductDisplay from '../Components/ProductDisplay.jsx';
-
-const Product = () => {
-  const {all_products} = useContext(ShopContext);
-  const products = all_products
-
-  const {productId} = useParams();
 
 
-  const product = products.find((e) =>
-      e.id === Number(productId)
+const Task = () => {
+  const {tasks} = useContext(TaskContext);
+  const myTasks = tasks
+
+  const {taskId} = useParams();
+
+
+  const task = myTasks.find((e) =>
+      e.id === Number(taskId)
   )
 
 
@@ -21,10 +20,10 @@ const Product = () => {
 
   return (
     <div>
-      <Breadcrum product={product} />
-      <ProductDisplay product={product} />
+      <Breadcrum task={task} />
+      <TaskDisplay task={task} />
     </div>
   )
 }
 
-export default Product
+export default Task
