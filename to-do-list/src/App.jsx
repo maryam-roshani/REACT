@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import './App.css'
 import Home from './components/home/home'
 import LoginSignup from './components/loginSignup/LoginSignup'
 import Detail from './components/TaskDisplay'
-import TaskCategory from './Pages/TaskCategory'
 import { BrowserRouter } from 'react-router-dom'
 
 
@@ -24,7 +22,6 @@ function App() {
           <Route path=':taskId' element={<Task/>}/>
         </Route>
       </Routes>
-
       </BrowserRouter>
       
     </>
