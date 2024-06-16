@@ -11,12 +11,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div className='h-full'>
-        < Home />
-        <LoginSignup />
+      {/* <LoginSignup /> */}
         {/* <Detail /> */}
-      </div>
       <Routes>
+        <Route path='/' element={<Home/>}/>
         <Route path='/task' element={<Task/>}>
           <Route path=':taskId' element={<Task/>}/>
         </Route>

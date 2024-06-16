@@ -7,7 +7,7 @@ const TaskItem = (props) => {
   return (
     <>
       <h4 className="text-base font-medium col-span-1">{props.id}</h4>
-      <Link to={`/task/${props.id}`}><h4 className="text-base font-medium col-span-2">{props.title}</h4></Link>
+      <h4 className="text-base font-medium col-span-2">{props.title}</h4>
       <h4 className="text-base font-medium col-span-2">{props.priority}</h4>
       <h4 className="text-base font-medium col-span-2">{props.status}</h4>
     </>
@@ -26,9 +26,9 @@ const Home = () => {
               <h3 className="text-lg font-medium col-span-2">Status</h3>
             </div>
             {data.map(item => 
-                <li key={item.id} className='grid grid-cols-7 gap-4 rounded-md p-3'>
+                <Link to={`/task/${item.id}`} key={item.id}><li key={item.id} className='grid grid-cols-7 gap-4 rounded-md p-3'>
                     <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} />
-                </li>
+                </li></Link>
             )}
           </ul>
         </div>

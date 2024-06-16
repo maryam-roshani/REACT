@@ -18,9 +18,8 @@ const Task = () => {
 
   return (
     <div>
-      {/* <Breadcrum task={task} /> */}
-      <TaskDisplay task={task} />
-      <h1>hello</h1>
+        {/* <Breadcrum task={task} /> */}
+        <TaskDisplay task={task} />
     </div>
   )
 }
