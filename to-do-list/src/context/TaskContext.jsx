@@ -12,10 +12,14 @@ export const TaskContext = createContext(null);
         const beginDate =  task.time_added ;
         const currentDate = new Date();
 
+        const mi1 = currentDate.getMinutes();
+        const h1 = currentDate.getHours();
         const d1 = currentDate.getDate();
         const m1 = currentDate.getMonth() + 1;
         const y1 = currentDate.getFullYear();
 
+        const mi2 = beginDate.getMinutes();
+        const h2 = beginDate.getHours();
         const d2 = beginDate.getDate();
         const m2 = beginDate.getMonth() + 1;
         const y2 = beginDate.getFullYear();
