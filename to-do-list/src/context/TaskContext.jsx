@@ -44,7 +44,19 @@ export const TaskContext = createContext(null);
                 m3 = 11
                 y3--
             }
-            return `${y3} years and ${m3} months and ${d3} days`
+            if (h1 >= h2) {
+              h3 = h1 - h2
+            } else {
+              d3--
+              h3 = h1 - h2 + 24
+            }
+            if (mi1 >= mi2) {
+              mi3 = mi1 - mi2 
+            } else {
+              h3--
+              mi3 = mi1 - mi2 + 60
+            }
+            return `${y3} years and ${m3} months and ${d3} days and ${h3} hours and ${mi3} minutes`
         } else {
           final.innerText = `the year of your input ${y2} is in future, you have come from future??!!`
         }
