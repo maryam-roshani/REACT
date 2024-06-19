@@ -24,9 +24,10 @@ export const TaskContext = createContext(null);
         const m2 = beginDate.getMonth() + 1;
         const y2 = beginDate.getFullYear();
 
-        let y3, m3, d3
+        let y3, m3, d3, h3, mi3
+        let s1, s2, s3, s4, s5 = ''
 
-        if (y2 < y1) {
+        if (y2 <= y1) {
             if (m1 >= m2) {
                 m3 = m1 - m2;
                 y3 = y1 - y2
@@ -55,6 +56,9 @@ export const TaskContext = createContext(null);
             } else {
               h3--
               mi3 = mi1 - mi2 + 60
+            }
+            if (y3 !== 0){
+              s1 = `${y3} years and`
             }
             return `${y3} years and ${m3} months and ${d3} days and ${h3} hours and ${mi3} minutes`
         } else {
