@@ -4,6 +4,9 @@ import { useState } from 'react';
 const LoginSignup = () => {
 
     const [action,setAction] = useState("Sign Up");
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
   
     return (
         <div className="p-6 bg-blue-400">
