@@ -60,7 +60,19 @@ export const TaskContext = createContext(null);
             if (y3 !== 0){
               s1 = `${y3} years and`
             }
-            return `${y3} years and ${m3} months and ${d3} days and ${h3} hours and ${mi3} minutes`
+            if (m3 !== 0){
+              s2 = `${m3} months and`
+            }
+            if (d3 !== 0){
+              s3 = `${d3} days and`
+            }
+            if (h3 !== 0){
+              s4 = `${h3} hours and`
+            }
+            if (mi3 !== 0){
+              s5 = `${mi3} minutes`
+            }
+            return s1 + s2 + s3 + s4 + s5 +` ago`
         } else {
           final.innerText = `the year of your input ${y2} is in future, you have come from future??!!`
         }
