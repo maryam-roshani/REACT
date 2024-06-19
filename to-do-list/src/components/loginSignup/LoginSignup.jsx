@@ -20,7 +20,7 @@ const LoginSignup = () => {
                   <input type="password" className="p-3 shadow-md rounded-md outline-0 w-full" id="exampleInputPassword1" placeholder="Password"/>
                   {action==="Sign Up"?<div></div>:<div className="">Lost Password? <span className='font-semibold text-xs cursor-pointer'>Click Here!</span></div>}
                 </div>
-                <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white'>Continue</button>
+                <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white' onClick={() =>{setName()}}>Continue</button>
                 {action==="Login"?<div></div>:<p className="">Already have an account? <span className='font-bold text-red-600 text-lg cursor-pointer' onClick={()=>{setAction("Login")}}>Login </span>Here</p>}
                 {action==="Sign Up"?<div></div>:<div className="">No account? <span className='font-bold cursor-pointer text-red-600' onClick={()=>{setAction("Sign Up")}}>Sign Up </span></div>}
                 {action==="Login"?<div></div>:<div className="">
