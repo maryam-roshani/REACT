@@ -18,7 +18,7 @@ const Login = () => {
     }
 
     const submitButton = () =>{
-        alert(inputField.first_name)
+        alert(inputField)
     }    
   
     return (
