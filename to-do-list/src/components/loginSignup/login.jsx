@@ -1,11 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-
-const ExampleInput = (props) => {
-    return (
-      <input type= {props.type} value = {props.value} className="p-3 shadow-md rounded-md outline-0 w-full" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={props.name} onChange={props.onChange} />
-    )
-}
+import ExampleInput from './ExampleInput';
 
 const Login = () => {
     const [inputField , setInputField] = useState({
