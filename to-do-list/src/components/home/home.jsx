@@ -38,6 +38,24 @@ const Home = () => {
     return data
   }
 
+  const handleSort2 = () => {
+    const data2 = data.sort((a, b) => (a.title > b.title) ? 1 : -1)
+    data = data2
+    return data
+  }
+
+  const handleSort3 = () => {
+    const data2 = data.sort((a, b) => (a.priority > b.priority) ? 1 : -1)
+    data = data2
+    return data
+  }
+
+  const handleSort4 = () => {
+    const data2 = data.sort((a, b) => (a.status > b.status) ? 1 : -1)
+    data = data2
+    return data
+  }
+
   return (
     <div className="h-screen flex justify-content-center align-items-center bg-slate-100">
         <div className="rounded-md p-3 bg-white m-auto">
