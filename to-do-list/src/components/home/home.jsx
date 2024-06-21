@@ -35,7 +35,9 @@ const Home = () => {
   const [filter, setFilter] = useState('')
 
   const narrowItems = () => {
-    
+    return filter.toLowerCase() === ""
+      ? item
+      : item.id.includes(filter) | item.title.icludes(filter) | item.priority.includes(filter) | item.status.includes(filter) ;
   }
 
   const handleSort1 = () => {
