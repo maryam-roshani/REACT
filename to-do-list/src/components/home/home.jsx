@@ -32,6 +32,12 @@ const TaskItem = (props) => {
 }
 
 const Home = () => {
+  const [filter, setFilter] = useState('')
+
+  const narrowItems = () => {
+    
+  }
+
   const handleSort1 = () => {
     const data2 = data.sort((a, b) => (a.id > b.id) ? 1 : -1)
     data = data2
@@ -58,7 +64,11 @@ const Home = () => {
 
   return (
     <div className="h-screen flex justify-content-center align-items-center bg-slate-100">
+
         <div className="rounded-md p-3 bg-white m-auto">
+          <div className="block my-3 w-full p-2">
+            <input type="text" onChange={(e) => setFilter(e.target.value)} />
+          </div>
           <ul className='list-none'>
             <div className='grid grid-cols-7 gap-4 rounded-md p-3'>
               <TaskHeader content="id" onClick = {handleSort1} />
@@ -66,7 +76,7 @@ const Home = () => {
                <TaskHeader content="priority" onClick = {handleSort3} />
                <TaskHeader content="status" onClick = {handleSort4} />
             </div>
-            {data.map(item => 
+            {data.filter(narrowItems).map(item => 
                 <Link to={`/task/${item.id}`} key={item.id}><li key={item.id} className='grid grid-cols-7 gap-4 rounded-md p-3'>
                     <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} />
                 </li></Link>
