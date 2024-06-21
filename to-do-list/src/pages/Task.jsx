@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { TaskContext } from '../context/TaskContext.jsx'
 import {useParams} from 'react-router-dom';
 import TaskDisplay from '../components/TaskDisplay.jsx';
-// import Breadcrum from '../Components/breadcrum.jsx';
 
 
 const Task = () => {
@@ -17,10 +16,9 @@ const Task = () => {
   )
 
   return (
-    <div>
-        {/* <Breadcrum task={task} /> */}
+    <>
         <TaskDisplay task={task} />
-    </div>
+    </>
   )
 }
 
