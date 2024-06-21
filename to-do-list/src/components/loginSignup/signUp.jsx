@@ -29,8 +29,8 @@ const Signup = () => {
                     <ExampleInput type = "email" name= "email" value= {inputField.email} onChange= {inputsHandler}/>
                     <ExampleInput type = "password" name= "password" value= {inputField.password} onChange= {inputsHandler} />
                 </div>
-                <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white' onClick={() =>{setName()}}>Continue</button>
-                <p className="">Already have an account? <span className='font-bold text-red-600 text-lg cursor-pointer' onClick={()=>{setAction("Login")}}>Login </span>Here</p>}
+                <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white' onClick={submitButton}>Continue</button>
+                <p className="">Already have an account? <span className='font-bold text-red-600 text-lg cursor-pointer' >Login </span>Here</p>
                 <div className="">
                   <div className="flex gap-2">
                     <input type="checkbox" className="" id="exampleCheck1"/>
@@ -45,4 +45,4 @@ const Signup = () => {
 }
 
 
-export default LoginSignup
+export default Signup

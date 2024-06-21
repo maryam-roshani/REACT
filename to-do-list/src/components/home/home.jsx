@@ -1,7 +1,7 @@
 import React from 'react'
 import data from '../../assets/tasksData'
 import {Link} from 'react-router-dom';
-
+import { useState } from 'react';
 
 const TaskProp = (props) => {
   return (
@@ -34,34 +34,30 @@ const TaskItem = (props) => {
 const Home = () => {
   const [filter, setFilter] = useState('')
 
-  const narrowItems = () => {
-    return filter.toLowerCase() === ""
+  const narrowItems = (item) => {
+    return item.filter === ""
       ? item
-      : item.id.includes(filter) | item.title.icludes(filter) | item.priority.includes(filter) | item.status.includes(filter) ;
+      : item.id == filter | item.title.icludes(filter) | item.priority.includes(filter) | item.status.includes(filter) 
   }
 
   const handleSort1 = () => {
     const data2 = data.sort((a, b) => (a.id > b.id) ? 1 : -1)
-    data = data2
-    return data
+    return data2
   }
 
   const handleSort2 = () => {
     const data2 = data.sort((a, b) => (a.title > b.title) ? 1 : -1)
-    data = data2
-    return data
+    return data2
   }
 
   const handleSort3 = () => {
     const data2 = data.sort((a, b) => (a.priority > b.priority) ? 1 : -1)
-    data = data2
-    return data
+    return data2
   }
 
   const handleSort4 = () => {
     const data2 = data.sort((a, b) => (a.status > b.status) ? 1 : -1)
-    data = data2
-    return data
+    return data2
   }
 
   return (
