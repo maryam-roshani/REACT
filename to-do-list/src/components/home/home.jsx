@@ -3,27 +3,50 @@ import data from '../../assets/tasksData'
 import {Link} from 'react-router-dom';
 
 
+const TaskProp = (props) => {
+  return (
+   <>
+      <h4 className="text-base font-medium col-span-1">{props.content}</h4>
+   </>
+  )
+}
+
+const TaskHeader = (props) => {
+  return (
+    <>
+       <h3 className="text-lg font-medium col-span-1">{props.content}</h3>
+    </>
+  )
+}
+
+
 const TaskItem = (props) => {
   return (
     <>
-      <h4 className="text-base font-medium col-span-1">{props.id}</h4>
-      <h4 className="text-base font-medium col-span-2">{props.title}</h4>
-      <h4 className="text-base font-medium col-span-2">{props.priority}</h4>
-      <h4 className="text-base font-medium col-span-2">{props.status}</h4>
+      <TaskProp content = {props.id} />
+      <TaskProp content = {props.title} />
+      <TaskProp content = {props.priority} />
+      <TaskProp content = {props.status} />
     </>
   )
 }
 
 const Home = () => {
+  const handleSort1 = () => {
+    const data2 = data.sort((a, b) => (a.id > b.id) ? 1 : -1)
+    data = data2
+    return data
+  }
+
   return (
     <div className="h-screen flex justify-content-center align-items-center bg-slate-100">
         <div className="rounded-md p-3 bg-white m-auto">
           <ul className='list-none'>
             <div className='grid grid-cols-7 gap-4 rounded-md p-3'>
-              <h3 className="text-lg font-medium col-span-1">ID</h3>
-              <h3 className="text-lg font-medium col-span-2">Title</h3>
-              <h3 className="text-lg font-medium col-span-2">Priority</h3>
-              <h3 className="text-lg font-medium col-span-2">Status</h3>
+              <TaskHeader content="id" onClick = {handleSort1} />
+               <TaskHeader content="title" onClick = {handleSort2} />
+               <TaskHeader content="priority" onClick = {handleSort3} />
+               <TaskHeader content="status" onClick = {handleSort4} />
             </div>
             {data.map(item => 
                 <Link to={`/task/${item.id}`} key={item.id}><li key={item.id} className='grid grid-cols-7 gap-4 rounded-md p-3'>
