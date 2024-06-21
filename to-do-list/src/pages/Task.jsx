@@ -9,7 +9,6 @@ const Task = () => {
   const myTasks = tasks
 
   const {taskId} = useParams()
-  console.log(taskId)
 
   const task = myTasks.find((e) =>
       e.id === Number(taskId)

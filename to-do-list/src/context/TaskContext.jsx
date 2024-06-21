@@ -7,9 +7,7 @@ export const TaskContext = createContext(null);
 
   const TaskContextProvider = (props) => {
 
-    const timeDistance = () => {
-      for( const task in tasks ){
-        const beginDate =  task.time_added ;
+    const timeDistance = (beginDate) => {
         const currentDate = new Date();
 
         const mi1 = currentDate.getMinutes();
@@ -80,10 +78,10 @@ export const TaskContext = createContext(null);
       function getDaysInMonth(year, month) {
           return new Date(year, month, 0).getDate();
       }
-      }
     }
+    console.log(tasks[1].time_added.getMinutes())
       
-      const contextValue = { tasks };
+      const contextValue = { tasks, timeDistance };
       return (
         <TaskContext.Provider value={contextValue}>
           {props.children}
