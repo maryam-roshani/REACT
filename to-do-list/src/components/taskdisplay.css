@@ -1,7 +1,15 @@
 .trapezoid {
-    border-bottom: 50px solid #cfcccc;
+    border-bottom: 50px solid rgb(185, 25, 25);
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     height: 0;
     width: 180px;
+}
+
+.high {
+    border-bottom-color: rgb(23, 130, 23) !important;
+}
+
+.medium {
+    border-bottom-color: rgb(162, 162, 27) !important;
 }
