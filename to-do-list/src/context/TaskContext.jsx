@@ -85,10 +85,6 @@ export const TaskContext = createContext(null);
           return new Date(year, month, 0).getDate();
       }
     }
-
-    const time = tasks[1].time_added
-    console.log(time)
-    console.log(timeDistance(time))
       
       const contextValue = { tasks, timeDistance };
       return (
