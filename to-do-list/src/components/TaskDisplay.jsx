@@ -1,12 +1,21 @@
 import React from 'react'
 import './taskdisplay.css'
 import { TaskContext } from '../context/TaskContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+
+
+function getDate() {
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const date = today.getDate();
+    return `${month}/${date}/${year}`;
+  }
 
 const TaskDisplay = (props) => {
     const {task} = props;
     const {timeDistance} = useContext(TaskContext)
-    const [currentDate, setCurrentDate] = useState(task.time_added);
+    const [currentDate, setCurrentDate] = useState(getDate());
     return (
         <div className="bg-slate-50 flex justify-content-center align-items-center w-full h-full">
             <div className="w-96 h-48 rounded-md bg-white p-5 m-auto relative">

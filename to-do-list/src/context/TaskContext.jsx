@@ -56,16 +56,16 @@ export const TaskContext = createContext(null);
               mi3 = mi1 - mi2 + 60
             }
             if (y3 !== 0){
-              s1 = `${y3} years and`
+              s1 = `${y3} years and `
             }
             if (m3 !== 0){
-              s2 = `${m3} months and`
+              s2 = `${m3} months and `
             }
             if (d3 !== 0){
-              s3 = `${d3} days and`
+              s3 = `${d3} days and `
             }
             if (h3 !== 0){
-              s4 = `${h3} hours and`
+              s4 = `${h3} hours and `
             }
             if (mi3 !== 0){
               s5 = `${mi3} minutes`
@@ -79,7 +79,10 @@ export const TaskContext = createContext(null);
           return new Date(year, month, 0).getDate();
       }
     }
-    console.log(tasks[1].time_added.getMinutes())
+
+    const time = tasks[1].time_added
+    console.log(time)
+    console.log(timeDistance(time))
       
       const contextValue = { tasks, timeDistance };
       return (
