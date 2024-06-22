@@ -5,6 +5,7 @@ import Signup from './components/loginSignup/signUp'
 import Detail from './components/TaskDisplay'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Task from './pages/Task'
+import Navbar from './components/navbar'
 
 
 function App() {
@@ -12,8 +13,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      {/* <LoginSignup /> */}
-        {/* <Detail /> */}
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>

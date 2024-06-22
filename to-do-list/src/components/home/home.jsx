@@ -66,7 +66,7 @@ const Home = () => {
 
         <div className="rounded-md p-3 bg-white m-auto w-2/3">
           <div className="block my-3">
-            <input type="text" onChange={(e) => setFilter(e.target.value)} className='w-full p-2 border-slate-400 rounded-md bg-slate-50 text-lg' placeholder='search what you want ...'/>
+            <input type="text" onChange={(e) => setFilter(e.target.value)} className='w-full p-2 border-slate-400 rounded-md bg-slate-50' placeholder='search what you want ...'/>
           </div>
           <ul className='list-none w-full'>
             <div className='grid grid-cols-4 rounded-md p-3 w-full'>
