@@ -23,7 +23,8 @@ export const TaskContext = createContext(null);
         const y2 = beginDate.getFullYear();
 
         let y3, m3, d3, h3, mi3
-        let s1, s2, s3, s4, s5 = ''
+        let s1 = '' , s2 = '', s3 = '', s4 = '', s5 = ' '
+        console.log(s1 + 'h1llooo' + s2)
         const string = ' '
         console.log(`${y1} , ${m1}, ${d1}, ${h1}, ${mi1}`)
         console.log(`${y2} , ${m2}, ${d2}, ${h2}, ${mi2}`)
