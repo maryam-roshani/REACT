@@ -24,6 +24,9 @@ export const TaskContext = createContext(null);
 
         let y3, m3, d3, h3, mi3
         let s1, s2, s3, s4, s5 = ''
+        const string = ' '
+        console.log(`${y1} , ${m1}, ${d1}, ${h1}, ${mi1}`)
+        console.log(`${y2} , ${m2}, ${d2}, ${h2}, ${mi2}`)
 
         if (y2 <= y1) {
             if (m1 >= m2) {
@@ -70,6 +73,8 @@ export const TaskContext = createContext(null);
             if (mi3 !== 0){
               s5 = `${mi3} minutes`
             }
+            console.log(`helloooo!   ${y3} , ${m3}, ${d3}, ${h3}, ${mi3}`)
+            
             return s1 + s2 + s3 + s4 + s5 +` ago`
         } else {
           final.innerText = `the year of your input ${y2} is in future, you have come from future??!!`
