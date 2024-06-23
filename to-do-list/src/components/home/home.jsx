@@ -30,7 +30,7 @@ const TaskItem = (props) => {
       <TaskProp content = {props.priority} />
       <TaskProp content = {props.status} />
       <div className='relative'>
-      <FaTrashCan className='absolute right-3'/>
+      <FaTrashCan className='absolute right-3' onClick={props.onDelete} />
       </div>
     </>
   )
@@ -38,6 +38,11 @@ const TaskItem = (props) => {
 
 const Home = () => {
   const [filter, setFilter] = useState('')
+  const [todos, setTodos] = useState(data);
+
+  const deleteItem = (index) => {
+    setTodos(todos => todos.filter((item, i) => i !== index));
+  };
 
   const narrowItems = (item) => {
     return item.filter === ""
@@ -81,10 +86,10 @@ const Home = () => {
                <TaskHeader content="status" onClick = {handleSort4} />
                <TaskHeader content="" />
             </div>
-            {data.filter(narrowItems).map(item => 
+            {todos.filter(narrowItems).map(item => 
                 <Link to={`/task/${item.id}`} key={item.id}>
                   <li key={item.id} className='grid grid-cols-5 rounded-md p-3'>
-                    <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} />
+                    <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete= {handleDelete(item.id)} />
                   </li>
                 </Link>
             )}
