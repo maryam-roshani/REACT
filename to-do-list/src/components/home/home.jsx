@@ -2,6 +2,8 @@ import React from 'react'
 import data from '../../assets/tasksData'
 import {Link} from 'react-router-dom';
 import { useState } from 'react';
+import { FaTrashCan } from "react-icons/fa6";
+
 
 const TaskProp = (props) => {
   return (
@@ -27,6 +29,9 @@ const TaskItem = (props) => {
       <TaskProp content = {props.title} />
       <TaskProp content = {props.priority} />
       <TaskProp content = {props.status} />
+      <div className='flex justify-content-right'>
+      <FaTrashCan className='' />
+      </div>
     </>
   )
 }
@@ -69,15 +74,16 @@ const Home = () => {
             <input type="text" onChange={(e) => setFilter(e.target.value)} className='w-full p-2 border-slate-400 rounded-md bg-slate-50' placeholder='search what you want ...'/>
           </div>
           <ul className='list-none w-full'>
-            <div className='grid grid-cols-4 rounded-md p-3 w-full'>
+            <div className='grid grid-cols-5 rounded-md p-3 w-full'>
               <TaskHeader content="id" onClick = {handleSort1} />
                <TaskHeader content="title" onClick = {handleSort2} />
                <TaskHeader content="priority" onClick = {handleSort3} />
                <TaskHeader content="status" onClick = {handleSort4} />
+               <TaskHeader content="" />
             </div>
             {data.filter(narrowItems).map(item => 
                 <Link to={`/task/${item.id}`} key={item.id}>
-                  <li key={item.id} className='grid grid-cols-4 rounded-md p-3'>
+                  <li key={item.id} className='grid grid-cols-5 rounded-md p-3'>
                     <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} />
                   </li>
                 </Link>
