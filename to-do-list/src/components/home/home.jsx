@@ -29,8 +29,8 @@ const TaskItem = (props) => {
       <TaskProp content = {props.title} />
       <TaskProp content = {props.priority} />
       <TaskProp content = {props.status} />
-      <div className='flex justify-content-right'>
-      <FaTrashCan className='' />
+      <div className='relative'>
+      <FaTrashCan className='absolute right-3'/>
       </div>
     </>
   )
