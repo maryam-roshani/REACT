@@ -40,7 +40,7 @@ const Home = () => {
   const [filter, setFilter] = useState('')
   const [todos, setTodos] = useState(data);
 
-  const deleteItem = (index) => {
+  const handleDelete = (index) => {
     setTodos(todos => todos.filter((item, i) => i !== index));
   };
 
