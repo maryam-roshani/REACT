@@ -38,10 +38,10 @@ const TaskItem = (props) => {
 
 const Home = () => {
   const [filter, setFilter] = useState('')
-  const [todos, setTodos] = useState(data);
+  // const [todos, setTodos] = useState(data);
 
   const handleDelete = (index) => {
-    setTodos(todos => todos.filter((item, i) => i !== index));
+    // setTodos(todos => todos.filter((item, i) => i !== index));
   };
 
   const narrowItems = (item) => {
@@ -86,7 +86,7 @@ const Home = () => {
                <TaskHeader content="status" onClick = {handleSort4} />
                <TaskHeader content="" />
             </div>
-            {todos.filter(narrowItems).map(item => 
+            {data.filter(narrowItems).map(item => 
                 <Link to={`/task/${item.id}`} key={item.id}>
                   <li key={item.id} className='grid grid-cols-5 rounded-md p-3'>
                     <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete= {handleDelete(item.id)} />
@@ -94,6 +94,7 @@ const Home = () => {
                 </Link>
             )}
           </ul>
+          <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12">Add New Task</button>
         </div>
       </div>
   )
