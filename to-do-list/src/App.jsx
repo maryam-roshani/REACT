@@ -21,6 +21,7 @@ function App() {
         <Route path='/task' element={<Task/>}>
           <Route path=':taskId' element={<Task/>}/>
         </Route>
+        <Route path='/task/create' element={<Create/>}/>
       </Routes>
       </BrowserRouter>
       
