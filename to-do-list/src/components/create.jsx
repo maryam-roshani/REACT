@@ -1,7 +1,8 @@
 import React from 'react'
+import { useState } from 'react'
 
 const OptionSelect = (props) => {
-  <option value={props.value}>{props.value}</option>
+  <option className='w-48 h-12 bg-slate-300' value={props.value}>{props.value}</option>
 }
 
 const Create = () => {
