@@ -94,7 +94,7 @@ const Home = () => {
                 </Link>
             )}
           </ul>
-          <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12">Add New Task</button>
+          <Link to={`/task/create`}><button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12">Add New Task</button></Link>
         </div>
       </div>
   )
