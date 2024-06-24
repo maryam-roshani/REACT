@@ -17,6 +17,7 @@ const Create = () => {
     const dataToSubmit = { 
       ...formData 
     };
+}
 
    const handleInputChange = (event) => { 
      const { target } = event; 
