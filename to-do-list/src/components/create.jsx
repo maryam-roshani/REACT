@@ -1,6 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
 
+const Dropdown = () => {
+    const [value, setValue] = useState('')
+    const options = [
+       { label: "high" value: "high"},
+       { label: "medium" value: "medium"}
+       { label: "low" value: "low"}
+    ]
+  
+    function handleSelect(event) {
+        setValue(event.target.value)
+    }
+ }
+
 const OptionSelect = (props) => {
   <option className='w-48 h-12 bg-slate-300' value={props.value}>{props.value}</option>
 }
