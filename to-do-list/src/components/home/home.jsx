@@ -26,7 +26,7 @@ const TaskItem = (props) => {
   return (
     <>
       <TaskProp content = {props.id} />
-      <TaskProp content = {props.title} />
+      <Link to={`/task/${props.id}`} key={props.id}><TaskProp content = {props.title} /></Link>
       <TaskProp content = {props.priority} />
       <TaskProp content = {props.status} />
       <div className='relative'>
@@ -96,12 +96,10 @@ const Home = () => {
                <TaskHeader content="status" onClick = {handleSort4} />
                <TaskHeader content="" />
             </div>
-            {data.filter(narrowItems).map(item => 
-                <Link to={`/task/${item.id}`} key={item.id}>
-                  <li key={item.id} className='grid grid-cols-5 rounded-md p-3'>
-                    <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete= {handleDelete(item.id)} />
-                  </li>
-                </Link>
+            {todos.filter(narrowItems).map(item => 
+                <li key={item.id} className='grid grid-cols-5 rounded-md p-3'>
+                  <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete= {handleDelete(item.id)} />
+                </li>
             )}
           </ul>
           <Link to={`/task/create`}><button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12">Add New Task</button></Link>
