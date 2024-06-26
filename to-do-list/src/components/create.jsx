@@ -29,19 +29,21 @@ const Create = () => {
      }); 
    }
   return (
-    <div>
-       <form onSubmit={handleSubmit}>
-         <label htmlFor="my-input">Title</label> 
-         <input id="my-input" type="text" name="myInput" onChange={handleInputChange} />
-         <select value={value} onChange={handleInputChange}>
+    <div className="bg-slate-50 flex justify-content-center align-items-center w-full h-full">
+        <div className="w-96 h-64 rounded-md bg-white p-5 m-auto relative" >
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="my-input">Title</label> 
+                <input id="my-input" type="text" name="myInput" onChange={handleInputChange} />
+                <select value={value} onChange={handleInputChange}>
 
-           <OptionSelect value= "high" />
-           <OptionSelect value= "medium" />
-           <OptionSelect value= "low" />
+                <OptionSelect value= "high" />
+                <OptionSelect value= "medium" />
+                <OptionSelect value= "low" />
 
-         </select>
-         <button type="submit">Submit</button>
-       </form>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+       </div>
     </div>
   )
 }
