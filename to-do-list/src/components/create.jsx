@@ -31,17 +31,17 @@ const Create = () => {
   return (
     <div className="bg-slate-50 flex justify-content-center align-items-center w-full h-full">
         <div className="w-96 h-64 rounded-md bg-white p-5 m-auto relative" >
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='block'>
                 <label htmlFor="my-input">Title</label> 
-                <input id="my-input" type="text" name="myInput" onChange={handleInputChange} />
-                <select value={value} onChange={handleInputChange}>
+                <input id="my-input" type="text" name="myInput" onChange={handleInputChange} className='p-3 w-full rounded-md' />
+                <select value={value} onChange={handleInputChange} className='block text-lg'>
 
                 <OptionSelect value= "high" />
                 <OptionSelect value= "medium" />
                 <OptionSelect value= "low" />
 
                 </select>
-                <button type="submit">Submit</button>
+                <button type="submit" className='block'>Submit</button>
             </form>
        </div>
     </div>
