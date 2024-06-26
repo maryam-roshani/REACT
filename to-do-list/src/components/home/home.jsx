@@ -50,8 +50,8 @@ const Home = () => {
   const [filter, setFilter] = useState('')
   const [todos, setTodos] = useState(Initial_Tasks);
 
-  const handleDelete = (index) => {
-    // setTodos(todos => todos.filter((item, i) => i !== index));
+  const handleDelete = (id) => {
+    setTodos(todos => todos.filter((item) => item.id !== id));
   };
 
   const narrowItems = (item) => {
@@ -96,9 +96,9 @@ const Home = () => {
                <TaskHeader content="status" onClick = {handleSort4} />
                <TaskHeader content="" />
             </div>
-            {todos.filter(narrowItems).map(item => 
-                <li key={item.id} className='grid grid-cols-5 rounded-md p-3'>
-                  <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete= {handleDelete(item.id)} />
+            {todos.filter(narrowItems).map((item, i) => 
+                <li index={i} key={item.id} className='grid grid-cols-5 rounded-md p-3'>
+                  <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete={() => handleDelete(item.id)} />
                 </li>
             )}
           </ul>
