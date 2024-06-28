@@ -3,17 +3,19 @@ import { useState } from 'react'
 
 
 const Create = () => {
+    const {tasks} = useContext(TaskContext);
+    const myTasks = tasks
+    ln = myTasks.length()
     const [inputTitle, setinputTitle] = useState(""); 
     const [inputText, setinputText] = useState("");
     const [items, setitems] = useState([
        {
 
-         id: "001",
+         id: ln+1,
          name: "Default Task",
          desc: "Default Description",
          priority: "high",
          status: "in progress...",
-         time_added: new Date()
        },
     ]);
 
@@ -31,9 +33,9 @@ const Create = () => {
       }
       else {
         const allInputData = {
-          id: ,
           name: inputData,
           desc: inputDesc,
+          time_added: new Date()
         };
       setitems([allInputData, ...items]);
       }
