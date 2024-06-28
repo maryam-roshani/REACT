@@ -8,12 +8,14 @@ const Create = () => {
     ln = myTasks.length()
     const [inputTitle, setInputTitle] = useState(""); 
     const [inputText, setInputText] = useState("");
+    const [inputPriority, setInputPriority] = useState("");
     const [items, setitems] = useState([
        {
          name: "Default Task",
          text: "Default Text",
-         priority: "high",
+         priority: "medium",
          status: "in progress...",
+         time_added: new Date()
        },
     ]);
 
@@ -37,6 +39,7 @@ const Create = () => {
           id: ln+1,
           title: inputTitle,
           text: inputText,
+          priority: inputPriority,
           time_added: new Date()
         };
       setitems([allInputData, ...items]);
