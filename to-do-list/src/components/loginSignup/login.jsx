@@ -13,7 +13,7 @@ const Login = () => {
         setInputField( {[e.target.name]: e.target.value} )
     }
 
-    const submitButton = () =>{
+    const handleSubmit = () =>{
         alert(inputField)
     }    
   
