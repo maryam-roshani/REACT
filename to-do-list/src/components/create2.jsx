@@ -10,31 +10,30 @@ const Create = () => {
     const [inputText, setinputText] = useState("");
     const [items, setitems] = useState([
        {
-
-         id: ln+1,
          name: "Default Task",
-         desc: "Default Description",
+         text: "Default Text",
          priority: "high",
          status: "in progress...",
        },
     ]);
 
     const handleInputTitle = (e) => {
-     setinputData(e.target.value);
+     setinputTitle(e.target.value);
     };
-   const handleInputtext = (e) => {
+   const handleInputText = (e) => {
      setinputText(e.target.value);
    };
     
     const handleSubmit = (e) => {
       e.preventDefault();
-      if (!inputData || !inputDesc) {
+      if (!inputTitle || !inputText) {
         alert("fill data");
       }
       else {
         const allInputData = {
-          name: inputData,
-          desc: inputDesc,
+          id: ln+1,
+          title: inputTitle,
+          text: inputText,
           time_added: new Date()
         };
       setitems([allInputData, ...items]);
