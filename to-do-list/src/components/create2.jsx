@@ -1,18 +1,42 @@
 import React from 'react'
 import { useState } from 'react'
 
-const OptionSelect = (props) => {
-  <option className='w-48 h-12 bg-slate-300' value={props.value}>{props.value}</option>
-}
 
 const Create = () => {
-    const [value, setValue] = useState('priority')
-    const [formData, setFormData] = useState({})
-    const handleSubmit = (event) => { 
-      event.preventDefault(); 
-      const dataToSubmit = { 
-        ...formData 
-      };
+    const [inputTitle, setinputTitle] = useState(""); 
+    const [inputText, setinputText] = useState("");
+    const [items, setitems] = useState([
+       {
+
+         id: "001",
+         name: "Default Task",
+         desc: "Default Description",
+         priority: "high",
+         status: "in progress...",
+         time_added: new Date()
+       },
+    ]);
+
+    const handleInputTitle = (e) => {
+     setinputData(e.target.value);
+    };
+   const handleInputtext = (e) => {
+     setinputText(e.target.value);
+   };
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (!inputData || !inputDesc) {
+        alert("fill data");
+      }
+      else {
+        const allInputData = {
+          id: ,
+          name: inputData,
+          desc: inputDesc,
+        };
+      setitems([allInputData, ...items]);
+      }
     }
     const options = [
        { label: "high", value: "high"},
@@ -36,12 +60,12 @@ const Create = () => {
             <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" >
                 <form onSubmit={handleSubmit} className='block'>
                     <label htmlFor="my-input">Title</label> 
-                    <input id="my-input" type="text" name="myInput" onChange={handleInputChange} className='p-3 w-full rounded-md' />
-                    <label htmlFor="my-input">Text</label> 
-                    <textarea name="postContent" />
+                    <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
+                    <label htmlFor="my-textarea">Text</label> 
+                    <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
                     <div className="w-1/2 p-3 rounded-md border-1">
                         <h4>Priority</h4>
-                        <select value={value} onChange={handleSelect} className='block text-lg'>
+                        <select name="priority" onChange={handleInputChange} className='block text-lg'>
                             {options.map(option => (
                                 <option value={option.value}>{option.label}</option>
                             ))}
