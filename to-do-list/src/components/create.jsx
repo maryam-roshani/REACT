@@ -6,7 +6,7 @@ import { TaskContext } from '../context/TaskContext.jsx'
 const Create = () => {
     const {tasks} = useContext(TaskContext);
     const myTasks = tasks
-    ln = myTasks.length()
+    let ln = myTasks.length
     const [inputTitle, setInputTitle] = useState(""); 
     const [inputText, setInputText] = useState("");
     const [inputPriority, setInputPriority] = useState("");
@@ -44,6 +44,7 @@ const Create = () => {
           time_added: new Date()
         };
       setitems([allInputData, ...items]);
+      console.log(items)
       }
     }
     const options = [
