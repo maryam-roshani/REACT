@@ -13,9 +13,9 @@ const Login = () => {
         setInputField( {[e.target.name]: e.target.value} )
     }
 
-    const handleSubmit = () =>{
+    const handleSubmit = (inputField) =>{
         let text = "";
-        console.log()
+        console.log(inputField);
         for (let [name, value] of Object.entries(inputField)) {
           text += name + ": " + value + "<br>";
         }
@@ -33,7 +33,7 @@ const Login = () => {
                   <ExampleInput type = "password" name= "password" value= {inputField.password} onChange= {inputsHandler} />
                   <div className="">Lost Password? <span className='font-semibold text-xs cursor-pointer'>Click Here!</span></div>
                 </div>
-                <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white' onClick={() =>{handleSubmit()}}>Continue</button>
+                <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white' onClick={handleSubmit}>Continue</button>
                 <div className="">No account? <Link to={`/signup`}><span className='font-bold cursor-pointer text-red-600'>Sign Up </span></Link></div>
               </form> 
             </div>
