@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import ExampleInput from './ExampleInput';
+import {Link} from 'react-router-dom';
+
 
 const Signup = () => {
 
@@ -30,7 +32,7 @@ const Signup = () => {
                     <ExampleInput type = "password" name= "password" value= {inputField.password} onChange= {inputsHandler} />
                 </div>
                 <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white' onClick={submitButton}>Continue</button>
-                <p className="">Already have an account? <span className='font-bold text-red-600 text-lg cursor-pointer' >Login </span>Here</p>
+                <p className="">Already have an account? <Link to={`/login`}><span className='font-bold text-red-600 text-lg cursor-pointer' >Login </span></Link>Here</p>
                 <div className="">
                   <div className="flex gap-2">
                     <input type="checkbox" className="" id="exampleCheck1"/>

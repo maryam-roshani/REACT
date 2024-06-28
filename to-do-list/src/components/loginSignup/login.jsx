@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import ExampleInput from './ExampleInput';
+import {Link} from 'react-router-dom';
 
 const Login = () => {
     const [inputField , setInputField] = useState({
@@ -28,7 +29,7 @@ const Login = () => {
                   <div className="">Lost Password? <span className='font-semibold text-xs cursor-pointer'>Click Here!</span></div>
                 </div>
                 <button className='border-none p-3 text-lg mb-2 bg-red-500 rounded-md font-semibold text-white' onClick={() =>{handleSubmit()}}>Continue</button>
-                <div className="">No account? <span className='font-bold cursor-pointer text-red-600' onClick={()=>{setAction("Sign Up")}}>Sign Up </span></div>
+                <div className="">No account? <Link to={`/signup`}><span className='font-bold cursor-pointer text-red-600'>Sign Up </span></Link></div>
               </form> 
             </div>
           </div>
