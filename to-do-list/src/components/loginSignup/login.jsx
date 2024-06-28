@@ -14,7 +14,12 @@ const Login = () => {
     }
 
     const handleSubmit = () =>{
-        alert(inputField)
+        let text = "";
+        console.log()
+        for (let [name, value] of Object.entries(inputField)) {
+          text += name + ": " + value + "<br>";
+        }
+        alert(text)
     }    
   
     return (
