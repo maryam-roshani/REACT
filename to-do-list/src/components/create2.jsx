@@ -50,17 +50,6 @@ const Create = () => {
        { label: "medium", value: "medium"},
        { label: "low", value: "low"}
     ]
-    function handleSelect(event) {
-        setValue(event.target.value)
-    }
-    const handleInputChange = (event) => { 
-        const { target } = event; 
-        const { name, value } = target;
-        setFormData({
-          ...formData, 
-          [name]: value 
-        }); 
-      }
 
     return (
         <div className="bg-slate-50 flex justify-content-center align-items-center w-full h-full">
