@@ -53,6 +53,10 @@ const Home = () => {
   const [inputTitle, setInputTitle] = useState(""); 
   const [inputText, setInputText] = useState("");
   const [inputPriority, setInputPriority] = useState("");
+  const createHeight = useRef()
+  const [ create, setCreate ] = useState(false)
+
+
 
   const handleInputTitle = (e) => {
     setInputTitle(e.target.value);
@@ -121,44 +125,49 @@ const Home = () => {
 
   return (
     <div className="h-screen flex justify-content-center align-items-center bg-slate-100">
-
-        <div className="rounded-md p-3 bg-white m-auto w-2/3">
-          <div className="block my-3">
-            <input type="text" onChange={(e) => setFilter(e.target.value)} className='w-full p-2 border-slate-400 rounded-md bg-slate-50' placeholder='search what you want ...'/>
-          </div>
-          <ul className='list-none w-full'>
-            <div className='grid grid-cols-5 rounded-md p-3 w-full'>
-              <TaskHeader content="id" onClick = {handleSort1} />
-               <TaskHeader content="title" onClick = {handleSort2} />
-               <TaskHeader content="priority" onClick = {handleSort3} />
-               <TaskHeader content="status" onClick = {handleSort4} />
-               <TaskHeader content="" />
+        <div className='w-full h-full p-5'>
+          <div className="rounded-md p-3 bg-white m-auto w-2/3">
+            <div className="block my-3">
+              <input type="text" onChange={(e) => setFilter(e.target.value)} className='w-full p-2 border-slate-400 rounded-md bg-slate-50' placeholder='search what you want ...'/>
             </div>
-            {todos.filter(narrowItems).map((item, i) => 
-                <li index={i} key={item.id} className='grid grid-cols-5 rounded-md p-3'>
-                  <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete={() => handleDelete(item.id)} />
-                </li>
-            )}
-          </ul>
-          <Link to={`/task/create`}><button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12">Add New Task</button></Link>
+            <ul className='list-none w-full'>
+              <div className='grid grid-cols-5 rounded-md p-3 w-full'>
+                <TaskHeader content="id" onClick = {handleSort1} />
+                <TaskHeader content="title" onClick = {handleSort2} />
+                <TaskHeader content="priority" onClick = {handleSort3} />
+                <TaskHeader content="status" onClick = {handleSort4} />
+                <TaskHeader content="" />
+              </div>
+              {todos.filter(narrowItems).map((item, i) => 
+                  <li index={i} key={item.id} className='grid grid-cols-5 rounded-md p-3'>
+                    <TaskItem id = {item.id} title={item.title} priority={item.priority} status={item.status} onDelete={() => handleDelete(item.id)} />
+                  </li>
+              )}
+            </ul>
+            <Link to={`/task/create`}><button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12">Add New Task</button></Link>
+          </div>
+          <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" ref={createHeight} style={
+             create
+             ? { height: contentHeight.current.scrollHeight }
+             : { height: "0px" }
+            }> 
+                <form onSubmit={handleSubmit} className='block'>
+                    <label htmlFor="my-input">Title</label> 
+                    <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
+                    <label htmlFor="my-textarea">Text</label> 
+                    <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
+                    <div className="w-1/2 p-3 rounded-md border-1">
+                        <h4>Priority</h4>
+                        <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg'>
+                            {options.map(option => (
+                                <option value={option.value}>{option.label}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <button type="submit" className='block'>Submit</button>
+                </form>
+          </div>
         </div>
-        <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" >
-              <form onSubmit={handleSubmit} className='block'>
-                  <label htmlFor="my-input">Title</label> 
-                  <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
-                  <label htmlFor="my-textarea">Text</label> 
-                  <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
-                  <div className="w-1/2 p-3 rounded-md border-1">
-                      <h4>Priority</h4>
-                      <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg'>
-                          {options.map(option => (
-                              <option value={option.value}>{option.label}</option>
-                          ))}
-                      </select>
-                  </div>
-                  <button type="submit" className='block'>Submit</button>
-              </form>
-         </div>
       </div>
   )
 }
