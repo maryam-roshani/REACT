@@ -10,16 +10,7 @@ const Create = () => {
     const [inputTitle, setInputTitle] = useState(""); 
     const [inputText, setInputText] = useState("");
     const [inputPriority, setInputPriority] = useState("");
-    const [items, setitems] = useState([
-       {
-         id: ln+1,
-         name: "Default Task",
-         text: "Default Text",
-         priority: "medium",
-         status: "in progress...",
-         time_added: new Date()
-       },
-    ]);
+    const [items, setitems] = useState([]);
 
     const handleInputTitle = (e) => {
      setInputTitle(e.target.value);
@@ -38,13 +29,16 @@ const Create = () => {
       }
       else {
         const allInputData = {
+          id: ln+1,
           title: inputTitle,
           text: inputText,
           priority: inputPriority,
-          time_added: new Date()
+          status: "in progress...",
+          time_added: new Date(),
         };
       setitems([allInputData, ...items]);
       console.log(items)
+      console.log(myTasks)
       }
     }
     const options = [
