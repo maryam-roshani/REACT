@@ -6,8 +6,8 @@ const Create = () => {
     const {tasks} = useContext(TaskContext);
     const myTasks = tasks
     ln = myTasks.length()
-    const [inputTitle, setinputTitle] = useState(""); 
-    const [inputText, setinputText] = useState("");
+    const [inputTitle, setInputTitle] = useState(""); 
+    const [inputText, setInputText] = useState("");
     const [items, setitems] = useState([
        {
          name: "Default Task",
@@ -18,11 +18,14 @@ const Create = () => {
     ]);
 
     const handleInputTitle = (e) => {
-     setinputTitle(e.target.value);
+     setInputTitle(e.target.value);
     };
-   const handleInputText = (e) => {
-     setinputText(e.target.value);
-   };
+    const handleInputText = (e) => {
+     setInputText(e.target.value);
+    };
+    const handleInputPriority = (e) => {
+        setInputPriority(e.target.value);
+    };
     
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -66,7 +69,7 @@ const Create = () => {
                     <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
                     <div className="w-1/2 p-3 rounded-md border-1">
                         <h4>Priority</h4>
-                        <select name="priority" onChange={handleInputChange} className='block text-lg'>
+                        <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg'>
                             {options.map(option => (
                                 <option value={option.value}>{option.label}</option>
                             ))}
