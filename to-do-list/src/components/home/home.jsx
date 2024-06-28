@@ -96,6 +96,14 @@ const Home = () => {
     setTodos(todos => todos.filter((item) => item.id !== id));
   };
 
+  function toggleIsOpen() {
+    if(isOpen === true) {
+        setIsOpen(false);
+    } else if (IsOpen === false) {
+        setIsOpen(true);
+    }
+  }
+
   const narrowItems = (item) => {
     return item.filter === ""
       ? item
@@ -144,11 +152,11 @@ const Home = () => {
                   </li>
               )}
             </ul>
-            <Link to={`/task/create`}><button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12">Add New Task</button></Link>
+            <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsOpen}>Add New Task</button>
           </div>
           <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" ref={createHeight} style={
              create
-             ? { height: contentHeight.current.scrollHeight }
+             ? { height: createHeight.current.scrollHeight }
              : { height: "0px" }
             }> 
                 <form onSubmit={handleSubmit} className='block'>
