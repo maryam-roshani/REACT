@@ -1,5 +1,5 @@
 .trapezoid {
-    border-bottom: 50px solid rgb(185, 25, 25);
+    border-bottom: 50px solid;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     height: 0;
