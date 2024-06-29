@@ -1,7 +1,7 @@
 import React from 'react'
 import data from '../../assets/tasksData'
 import {Link} from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FaTrashCan } from "react-icons/fa6";
 
 
@@ -82,7 +82,7 @@ const Home = () => {
         status: "in progress...",
         time_added: new Date(),
       };
-      setTodos([allInputData, ...todos]);
+      setTodos([...todos, allInputData]);
       console.log(todos)
     }
   }
@@ -96,11 +96,11 @@ const Home = () => {
     setTodos(todos => todos.filter((item) => item.id !== id));
   };
 
-  function toggleIsOpen() {
-    if(isOpen === true) {
-        setIsOpen(false);
-    } else if (IsOpen === false) {
-        setIsOpen(true);
+  function toggleIsCreate() {
+    if (create === true) {
+        setCreate(false);
+    } else if (create === false) {
+        setCreate(true);
     }
   }
 
@@ -152,7 +152,7 @@ const Home = () => {
                   </li>
               )}
             </ul>
-            <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsOpen}>Add New Task</button>
+            <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsCreate}>Add New Task</button>
           </div>
           <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" ref={createHeight} style={
              create
