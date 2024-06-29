@@ -38,7 +38,8 @@ const TaskItem = (props) => {
 const d1 = new Date(2024, 5, 10, 10, 33)
 const d2 = new Date(2024, 5, 15, 22, 23)
 const d3 = new Date(2024, 5, 14, 12, 33)
-
+console.log(d1)
+console.log(d2)
 let Initial_Tasks = [
     { id: 1, title: "task-1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in tincidunt lacus, vitae mattis dolor. Duis nunc erat, blandit a.", priority: "high", status: "done", time_added: d1 },
     { id: 2, title: "task-2", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in tincidunt lacus, vitae mattis dolor. Duis nunc erat, blandit a.", priority: "medium", status: "cancelled", time_added: d2 },
@@ -80,7 +81,7 @@ const Home = () => {
         text: inputText,
         priority: inputPriority,
         status: "in progress...",
-        time_added: new Date(),
+        time_added: new Date()
       };
       setTodos([...todos, allInputData]);
       console.log(todos)
