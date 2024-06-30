@@ -150,11 +150,16 @@ const Home = () => {
             <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleCreate}>Add New Task</button>
           </div>
           {create? <div className="w-96 h-64 p-5 rounded-md flex justify-content-center mt-5" > 
-                      <form onSubmit={handleSubmit} className='bg-blue-200 p-5' >
-                          <label htmlFor="my-input">Title</label> 
-                          <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
-                          <label htmlFor="my-textarea">Text</label> 
-                          <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
+                      <form onSubmit={handleSubmit} className='bg-blue-200 p-3' >
+                          <div className="flex gap-3 align-items-center p-3">
+                            <label htmlFor="my-input">Title:</label> 
+                            <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
+                          </div>
+                          <div className="flex gap-3 p-3">
+                            <label htmlFor="my-textarea">Text:</label> 
+                            <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
+                          </div>
+                          
                           <div className="w-1/2 p-3 rounded-md border-1">
                               <h4>Priority</h4>
                               <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg'>
