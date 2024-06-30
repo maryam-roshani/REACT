@@ -149,8 +149,8 @@ const Home = () => {
             </ul>
             <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleCreate}>Add New Task</button>
           </div>
-          {create? <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" > 
-                      <form onSubmit={handleSubmit} className='' >
+          {create? <div className="w-96 h-64 p-5 rounded-md flex justify-content-center mt-5" > 
+                      <form onSubmit={handleSubmit} className='bg-blue-200 p-5' >
                           <label htmlFor="my-input">Title</label> 
                           <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
                           <label htmlFor="my-textarea">Text</label> 
