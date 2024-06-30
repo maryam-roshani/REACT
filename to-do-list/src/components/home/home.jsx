@@ -52,14 +52,7 @@ const Home = () => {
   const [inputTitle, setInputTitle] = useState(""); 
   const [inputText, setInputText] = useState("");
   const [inputPriority, setInputPriority] = useState("");
-
-
-
-
-
-
-  // const createHeight = useRef()
-  // const [ create, setCreate ] = useState(false)
+  const [ create, setCreate ] = useState(false)
 
 
 
@@ -102,14 +95,8 @@ const Home = () => {
     setTodos(todos => todos.filter((item) => item.id !== id));
   };
 
-  function toggleIsCreate() {
-    if (create === true) {
-        setCreate(false);
-        console.log(create)
-    } else {
-        setCreate(true);
-        console.log(create)
-    }
+  function toggleCreate() {
+    setCreate(!create)
   }
 
   const narrowItems = (item) => {
@@ -160,7 +147,7 @@ const Home = () => {
                   </li>
               )}
             </ul>
-            <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsCreate}>Add New Task</button>
+            <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleCreate}>Add New Task</button>
           </div>
           {create? <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" > 
                       <form onSubmit={handleSubmit} className='' >
