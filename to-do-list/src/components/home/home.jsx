@@ -149,8 +149,8 @@ const Home = () => {
             </ul>
             <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleCreate}>Add New Task</button>
           </div>
-          {create? <div className="w-1/3 h-84 p-5 rounded-md flex justify-content-center mt-5" > 
-                      <form onSubmit={handleSubmit} className='bg-blue-200 p-3' >
+          {create? <div className="w-full h-84 p-5 rounded-md flex justify-content-center mt-5" > 
+                      <form onSubmit={handleSubmit} className='bg-blue-200 p-3 mx-auto text-lg' >
                           <div className="flex gap-3 align-items-center p-3">
                             <label htmlFor="my-input">Title:</label> 
                             <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
@@ -162,13 +162,13 @@ const Home = () => {
                           
                           <div className="w-1/2 p-3 rounded-md border-1 flex gap-3">
                               <h4>Priority:</h4>
-                              <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg'>
+                              <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg p-2'>
                                   {options.map(option => (
-                                      <option value={option.value}>{option.label}</option>
+                                      <option className='' value={option.value}>{option.label}</option>
                                   ))}
                               </select>
                           </div>
-                          <button type="submit" className='block p-2 mt-3 rounded-lg text-lg w-full font-medium bg-blue-500 text-white'>Submit</button>
+                          <button type="submit" className='block p-2 mt-3 rounded-lg text-lg w-full font-medium text- bg-blue-500 text-white'>Submit</button>
                       </form>
                     </div> : <div></div>}
         </div>
