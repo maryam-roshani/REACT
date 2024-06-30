@@ -52,11 +52,18 @@ const Home = () => {
   const [inputTitle, setInputTitle] = useState(""); 
   const [inputText, setInputText] = useState("");
   const [inputPriority, setInputPriority] = useState("");
-  const createHeight = useRef()
-  const [ create, setCreate ] = useState(false)
 
 
 
+
+
+
+  // const createHeight = useRef()
+  // const [ create, setCreate ] = useState(false)
+
+
+
+  
   const handleInputTitle = (e) => {
     setInputTitle(e.target.value);
   };
@@ -153,14 +160,14 @@ const Home = () => {
                   </li>
               )}
             </ul>
-            <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsCreate}>Add New Task</button>
+            {/* <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsCreate}>Add New Task</button> */}
           </div>
-          <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" style={
+          <div ref={createHeight} className="w-96 h-64 rounded-md flex justify-content-center mt-5" style={
              create
              ? { height: createHeight.current }
              : { height: "0px" }
             }> 
-                <form onSubmit={handleSubmit} className='block' >
+                <form onSubmit={handleSubmit} className='' >
                     <label htmlFor="my-input">Title</label> 
                     <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
                     <label htmlFor="my-textarea">Text</label> 
