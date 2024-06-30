@@ -38,8 +38,6 @@ const TaskItem = (props) => {
 const d1 = new Date(2024, 5, 10, 10, 33)
 const d2 = new Date(2024, 5, 15, 22, 23)
 const d3 = new Date(2024, 5, 14, 12, 33)
-console.log(d1)
-console.log(d2)
 let Initial_Tasks = [
     { id: 1, title: "task-1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in tincidunt lacus, vitae mattis dolor. Duis nunc erat, blandit a.", priority: "high", status: "done", time_added: d1 },
     { id: 2, title: "task-2", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in tincidunt lacus, vitae mattis dolor. Duis nunc erat, blandit a.", priority: "medium", status: "cancelled", time_added: d2 },
@@ -100,8 +98,10 @@ const Home = () => {
   function toggleIsCreate() {
     if (create === true) {
         setCreate(false);
-    } else if (create === false) {
+        console.log(create)
+    } else {
         setCreate(true);
+        console.log(create)
     }
   }
 
@@ -155,12 +155,12 @@ const Home = () => {
             </ul>
             <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsCreate}>Add New Task</button>
           </div>
-          <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" ref={createHeight} style={
+          <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" style={
              create
-             ? { height: createHeight.current.scrollHeight }
+             ? { height: createHeight.current }
              : { height: "0px" }
             }> 
-                <form onSubmit={handleSubmit} className='block'>
+                <form onSubmit={handleSubmit} className='block' >
                     <label htmlFor="my-input">Title</label> 
                     <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
                     <label htmlFor="my-textarea">Text</label> 
