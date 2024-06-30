@@ -63,7 +63,7 @@ const Home = () => {
 
 
 
-  
+
   const handleInputTitle = (e) => {
     setInputTitle(e.target.value);
   };
@@ -160,29 +160,25 @@ const Home = () => {
                   </li>
               )}
             </ul>
-            {/* <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsCreate}>Add New Task</button> */}
+            <button className="w-full p-3 text-lg bg-purple-700 text-zinc-50 rounded-lg mt-12" onClick={toggleIsCreate}>Add New Task</button>
           </div>
-          <div ref={createHeight} className="w-96 h-64 rounded-md flex justify-content-center mt-5" style={
-             create
-             ? { height: createHeight.current }
-             : { height: "0px" }
-            }> 
-                <form onSubmit={handleSubmit} className='' >
-                    <label htmlFor="my-input">Title</label> 
-                    <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
-                    <label htmlFor="my-textarea">Text</label> 
-                    <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
-                    <div className="w-1/2 p-3 rounded-md border-1">
-                        <h4>Priority</h4>
-                        <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg'>
-                            {options.map(option => (
-                                <option value={option.value}>{option.label}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <button type="submit" className='block'>Submit</button>
-                </form>
-          </div>
+          {create? <div className="w-96 h-64 rounded-md flex justify-content-center mt-5" > 
+                      <form onSubmit={handleSubmit} className='' >
+                          <label htmlFor="my-input">Title</label> 
+                          <input id="my-input" type="text" name="Title" onChange={handleInputTitle} value={inputTitle} className='p-3 w-full rounded-md' />
+                          <label htmlFor="my-textarea">Text</label> 
+                          <textarea id="my-textarea" name="Text" onChange={handleInputText} value={inputText} className='p-3 w-full rounded-md' />
+                          <div className="w-1/2 p-3 rounded-md border-1">
+                              <h4>Priority</h4>
+                              <select name="Priority" onChange={handleInputPriority} value={inputPriority} className='block text-lg'>
+                                  {options.map(option => (
+                                      <option value={option.value}>{option.label}</option>
+                                  ))}
+                              </select>
+                          </div>
+                          <button type="submit" className='block'>Submit</button>
+                      </form>
+                    </div> : <div></div>}
         </div>
       </div>
   )
