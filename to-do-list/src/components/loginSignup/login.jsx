@@ -13,9 +13,11 @@ const Login = () => {
         setInputField( {[e.target.name]: e.target.value} )
     }
 
-    const handleSubmit = (inputField) =>{
+    const handleSubmit = (e) =>{
+        e.preventDefault();
         console.log(inputField);
-        alert(inputField)
+        console.log("hello")
+        // alert(inputField)
     }    
   
     return (
