@@ -10,17 +10,20 @@ const Login = () => {
 
     const emailHandler = (e) =>{
         setInputEmail( e.target.value )
+        e.target.value = ""
     }
 
     const passwordHandler = (e) =>{
       setInputPassword( e.target.value )
+      e.target.value = ""
   }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log(inputField);
-        console.log("hello")
-        // alert(inputField)
+        const text = "email : " + inputEmail
+        const text1 = "password : " + inputPassword
+        console.log(text + '\n' + text1)
+        alert(text + '\n' + text1)
     }    
   
     return (
