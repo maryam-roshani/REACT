@@ -5,22 +5,34 @@ import {Link} from 'react-router-dom';
 
 
 const Signup = () => {
-    const [nameInput , setNameInput] = useState("") 
-    const [emailInput , setEmailInput] = useState("") 
-    const [passwordInput , setPasswordInput] = useState("") 
+    const [inputName , setInputName] = useState("") 
+    const [inputEmail , setInputEmail] = useState("") 
+    const [inputPassword , setInputPassword] = useState("") 
 
-    const inputsHandler = (e) =>{
-        setInputField( {[e.target.name]: e.target.value} )
+    const nameHandler = (e) =>{
+      setInputName( e.target.value )
+      e.target.value = ""
     }
+
+
+    const emailHandler = (e) =>{
+      setInputEmail( e.target.value )
+      e.target.value = ""
+    }
+
+  const passwordHandler = (e) =>{
+    setInputPassword( e.target.value )
+    e.target.value = ""
+  }
     
-    const submitButton = (e) =>{
-      e.preventDefault();
-      const text = "name : " + inputName
-      const text1 = "email : " + inputEmail
-      const text2 = "password : " + inputPassword
-      console.log(text + '\n' + text1 + '\n' + text2)
-      alert(text + '\n' + text1 + '\n' + text2)
-  }    
+  const submitButton = (e) =>{
+    e.preventDefault();
+    const text = "name : " + inputName
+    const text1 = "email : " + inputEmail
+    const text2 = "password : " + inputPassword
+    console.log(text + '\n' + text1 + '\n' + text2)
+    alert(text + '\n' + text1 + '\n' + text2)
+}    
   
     return (
         <div className="p-6 bg-blue-400">
