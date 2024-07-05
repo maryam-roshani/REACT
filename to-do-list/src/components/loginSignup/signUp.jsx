@@ -5,12 +5,9 @@ import {Link} from 'react-router-dom';
 
 
 const Signup = () => {
-
-    const [inputField , setInputField] = useState({
-        name: '',
-        email: '',
-        password: ''
-    })
+    const [nameInput , setNameInput] = useState("") 
+    const [emailInput , setEmailInput] = useState("") 
+    const [passwordInput , setPasswordInput] = useState("") 
 
     const inputsHandler = (e) =>{
         setInputField( {[e.target.name]: e.target.value} )
@@ -18,10 +15,11 @@ const Signup = () => {
     
     const submitButton = (e) =>{
       e.preventDefault();
-      const text = "email : " + inputEmail
-      const text1 = "password : " + inputPassword
-      console.log(text + '\n' + text1)
-      alert(text + '\n' + text1)
+      const text = "name : " + inputName
+      const text1 = "email : " + inputEmail
+      const text2 = "password : " + inputPassword
+      console.log(text + '\n' + text1 + '\n' + text2)
+      alert(text + '\n' + text1 + '\n' + text2)
   }    
   
     return (
