@@ -4,14 +4,17 @@ import ExampleInput from './ExampleInput';
 import {Link} from 'react-router-dom';
 
 const Login = () => {
-    const [inputField , setInputField] = useState({
-        email: '',
-        password: ''
-    })
+    const [inputEmail , setInputEmail] = useState('')
+    const [inputPassword , setInputPassword] = useState('')
 
-    const inputsHandler = (e) =>{
-        setInputField( {[e.target.name]: e.target.value} )
+
+    const emailHandler = (e) =>{
+        setInputEmail( e.target.value )
     }
+
+    const passwordHandler = (e) =>{
+      setInputPassword( e.target.value )
+  }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
